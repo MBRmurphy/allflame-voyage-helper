@@ -35,10 +35,14 @@ const tierOneAreaSamples = [
   "Sunken Totems",
   "Clam Infested-shelf",
   "Kishara's rest",
+  "lost ruins",
+  "Hazardous Depths",
+  "Brine King’s Domain",
   "Anchorfield",
   "infested bathyspheres",
 ];
 tierOneAreaSamples.forEach((name) => assert.ok(core.tierOneUniqueAreaName({ rawText: `Rarity: Unique\n${name}` }), `${name} should be detected as T1`));
+assert.equal(core.TIER_ONE_UNIQUE_AREAS.length, 11, "All eleven T1 unique areas should be registered exactly once");
 const normalChartScore = core.scoreChart(charts[0], "general");
 const tierOneChartScore = core.scoreChart({ ...charts[0], rawText: "Rarity: Unique\nDiving Shoals" }, "general");
 assert.ok(tierOneChartScore > normalChartScore + 400000, "T1 unique areas should receive a dominant optimizer bonus");

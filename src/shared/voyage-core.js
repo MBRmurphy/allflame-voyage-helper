@@ -11,6 +11,9 @@ const TIER_ONE_UNIQUE_AREAS = [
   "Sunken Totems",
   "Clam Infested Shelf",
   "Kishara's Rest",
+  "Lost Ruins",
+  "Hazardous Depths",
+  "Brine King's Domain",
   "Anchorfield",
   "Infested Bathyspheres",
 ];

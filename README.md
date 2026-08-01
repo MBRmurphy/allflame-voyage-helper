@@ -20,7 +20,7 @@ Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyag
 - Best Voyage board labels each placed Chart with its inventory number and highlights inventory slots with the destination board tile.
 - Tile 5 is preferentially used as a three- or four-way bridge when the active Chart shapes can produce a valid reciprocal board.
 - A side summary lists aggregate buffs for the best board; hover any placed tile to see that tile's combined buff totals and contributing Charts.
-- Eight orange unique areas receive T1 path priority: Diving Shoals, Pelagic Abyss, Sea Pillars, Sunken Totems, Clam Infested Shelf, Kishara's Rest, Anchorfield, and Infested Bathyspheres.
+- Eleven orange unique areas receive T1 path priority: Diving Shoals, Pelagic Abyss, Sea Pillars, Sunken Totems, Clam Infested Shelf, Kishara's Rest, Lost Ruins, Hazardous Depths, Brine King's Domain, Anchorfield, and Infested Bathyspheres.
 - The best optimized path stays expanded while alternative paths are collapsed summaries that can be opened on demand.
 - Bounded beam optimizer avoids freezing the app on large Chart inventories.
 - Rotation-aware placement: Chart shapes can be rotated while planning.
