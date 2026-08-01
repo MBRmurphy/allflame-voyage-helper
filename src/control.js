@@ -38,8 +38,10 @@ function renderState(state) {
   const updateButton = $("checkUpdate");
   if (updateButton) {
     const update = state.update;
-    updateButton.textContent = update?.available
-      ? `Download v${update.latestVersion}`
+    updateButton.textContent = update?.installing
+      ? "Installing Update..."
+      : update?.available
+      ? `Install v${update.latestVersion}`
       : update?.error
         ? "Retry Update Check"
         : update?.noRelease
@@ -48,8 +50,9 @@ function renderState(state) {
           ? "Up to Date"
           : "Check Updates";
     updateButton.classList.toggle("update-ready", Boolean(update?.available));
+    updateButton.disabled = Boolean(update?.installing);
     updateButton.title = update?.available
-      ? `Open ${update.assetName || "the latest portable build"} on GitHub`
+      ? `Download, verify, install, and restart with ${update.assetName || "the latest portable build"}`
       : "Manually check GitHub Releases for a newer portable build";
   }
   renderProfiles(state);
@@ -336,10 +339,10 @@ document.addEventListener("click", async (event) => {
     if (event.target.id === "checkUpdate") {
       event.target.disabled = true;
       try {
-        if (currentState?.update?.available && currentState.update.downloadUrl) await window.voyage.openUpdateDownload();
+        if (currentState?.update?.available && currentState.update.downloadUrl) await window.voyage.downloadAndInstallUpdate();
         else await window.voyage.checkForUpdates();
       } finally {
-        event.target.disabled = false;
+        event.target.disabled = Boolean(currentState?.update?.installing);
       }
     }
     if (event.target.id === "optimize") {

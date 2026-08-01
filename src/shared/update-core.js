@@ -25,12 +25,29 @@ function selectWindowsPortableAsset(release) {
     || null;
 }
 
+function selectChecksumAsset(release) {
+  const assets = Array.isArray(release?.assets) ? release.assets : [];
+  return assets.find((asset) => /^SHA256SUMS\.txt$/i.test(asset?.name || "")) || null;
+}
+
+function checksumForAsset(checksumText, assetName) {
+  const wantedName = String(assetName || "").trim().toLowerCase();
+  if (!wantedName) return null;
+  for (const line of String(checksumText || "").split(/\r?\n/)) {
+    const match = line.trim().match(/^([a-f0-9]{64})\s+\*?(.+)$/i);
+    if (match && match[2].trim().toLowerCase() === wantedName) return match[1].toLowerCase();
+  }
+  return null;
+}
+
 function releaseUpdateInfo(release, currentVersion) {
   const latestVersion = String(release?.tag_name || release?.name || "").replace(/^v/i, "");
   if (!latestVersion) throw new Error("The latest GitHub release has no version tag.");
   const asset = selectWindowsPortableAsset(release);
+  const checksumAsset = selectChecksumAsset(release);
   const releaseUrl = /^https:\/\/github\.com\//i.test(release?.html_url || "") ? release.html_url : null;
   const assetUrl = /^https:\/\/github\.com\//i.test(asset?.browser_download_url || "") ? asset.browser_download_url : null;
+  const checksumUrl = /^https:\/\/github\.com\//i.test(checksumAsset?.browser_download_url || "") ? checksumAsset.browser_download_url : null;
   return {
     checked: true,
     currentVersion,
@@ -42,7 +59,9 @@ function releaseUpdateInfo(release, currentVersion) {
     downloadUrl: assetUrl || releaseUrl,
     releaseUrl,
     assetName: asset?.name || null,
+    checksumUrl,
+    checksumAssetName: checksumAsset?.name || null,
   };
 }
 
-module.exports = { compareVersions, selectWindowsPortableAsset, releaseUpdateInfo };
+module.exports = { compareVersions, selectWindowsPortableAsset, selectChecksumAsset, checksumForAsset, releaseUpdateInfo };

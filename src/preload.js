@@ -14,7 +14,7 @@ contextBridge.exposeInMainWorld("voyage", {
   optimize: () => ipcRenderer.invoke("optimize"),
   toggleOverlay: () => ipcRenderer.invoke("toggle-overlay"),
   checkForUpdates: () => ipcRenderer.invoke("check-for-updates"),
-  openUpdateDownload: () => ipcRenderer.invoke("open-update-download"),
+  downloadAndInstallUpdate: () => ipcRenderer.invoke("download-and-install-update"),
   onState: (callback) => ipcRenderer.on("state", (_event, value) => callback(value)),
   onOverlayMessage: (callback) => ipcRenderer.on("overlay-message", (_event, value) => callback(value)),
   onCursor: (callback) => ipcRenderer.on("cursor", (_event, value) => callback(value)),

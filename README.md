@@ -27,7 +27,7 @@ Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyag
 - Philosophy-informed scoring: rarity, quantity, pack size, stacked-deck/currency conversions, strongboxes, and Golden Lanterns are prioritized; low-value/danger clutter is de-emphasized outside dedicated profiles.
 - General Profit treats Additional Divine Orb, Golden Lanterns, More Currency, and currency-to-Stacked-Deck conversion as top-tier rewards, with Divine outcomes receiving the highest base weight.
 - Closing the control window quits the app completely, including overlay/timers/global hotkeys.
-- Optional **Check Updates** button queries the latest public GitHub Release only when clicked; it never checks or downloads silently.
+- Optional **Check Updates** button queries the latest public GitHub Release only when clicked; installing remains user initiated and nothing is checked or downloaded silently.
 
 ## Safety
 
@@ -48,9 +48,9 @@ npm run dist
 
 ## Desktop updates
 
-The desktop app does not contact GitHub in the background. Click **Check Updates** to compare the running version with the latest published GitHub Release. If a newer semantic version exists, the button changes to **Download vX.Y.Z**. Clicking it opens the immutable release asset on GitHub.
+The desktop app does not contact GitHub in the background. Click **Check Updates** to compare the running version with the latest published GitHub Release. If a newer semantic version exists, the button changes to **Install vX.Y.Z**. Clicking it downloads the immutable portable EXE and `SHA256SUMS.txt` release assets over HTTPS, verifies the SHA-256 checksum, closes the helper, replaces the old portable EXE, and restarts the updated app.
 
-The portable EXE intentionally does not overwrite itself while running. After downloading an update, close the helper and replace the old EXE with the downloaded one. Release assets include `SHA256SUMS.txt` for integrity verification.
+Replacement is performed by a detached local PowerShell helper only after Electron exits. It verifies the checksum again, preserves the previous EXE until the new file is in place, and restores/restarts the old copy if replacement fails. Automatic installation requires the packaged Windows portable app to be in a writable folder; development mode and protected install locations fail closed without changing the executable.
 
 Repository commits are not automatically treated as desktop updates. To publish one:
 

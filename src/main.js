@@ -1,12 +1,16 @@
-const { app, BrowserWindow, globalShortcut, ipcMain, screen, clipboard, net, shell } = require("electron");
+const { app, BrowserWindow, globalShortcut, ipcMain, screen, clipboard, net } = require("electron");
 const fs = require("node:fs");
 const path = require("node:path");
 const os = require("node:os");
+const crypto = require("node:crypto");
+const { spawn } = require("node:child_process");
 const core = require("./shared/voyage-core.js");
 const updateCore = require("./shared/update-core.js");
 
 const UPDATE_REPOSITORY = "MBRmurphy/allflame-voyage-helper";
 const UPDATE_RELEASE_API = `https://api.github.com/repos/${UPDATE_REPOSITORY}/releases/latest`;
+const UPDATE_HELPER_PATH = path.join(__dirname, "install-update.ps1");
+const MAX_UPDATE_BYTES = 250 * 1024 * 1024;
 
 let overlayWindow;
 let controlWindow;
@@ -206,7 +210,7 @@ async function checkForUpdates() {
     if (!response.ok) throw new Error(`GitHub update check failed (HTTP ${response.status})`);
     state.update = updateCore.releaseUpdateInfo(await response.json(), app.getVersion());
     state.status = state.update.available
-      ? `Update v${state.update.latestVersion} is available — click Download Update`
+      ? `Update v${state.update.latestVersion} is available — click Install Update`
       : `You are up to date (v${app.getVersion()})`;
     broadcast();
     return state.update;
@@ -218,13 +222,106 @@ async function checkForUpdates() {
   }
 }
 
-async function openUpdateDownload() {
-  const url = state.update?.downloadUrl || state.update?.releaseUrl;
-  if (!url || !/^https:\/\/github\.com\//i.test(url)) throw new Error("No trusted GitHub update download is available.");
-  await shell.openExternal(url);
-  state.status = `Opened the v${state.update.latestVersion} update download in your browser`;
-  broadcast();
-  return true;
+function trustedReleaseAssetUrl(url) {
+  return /^https:\/\/github\.com\/MBRmurphy\/allflame-voyage-helper\/releases\/download\//i.test(String(url || ""));
+}
+
+async function fetchReleaseAsset(url, maxBytes, label) {
+  if (!trustedReleaseAssetUrl(url)) throw new Error(`No trusted GitHub ${label} is available.`);
+  const response = await net.fetch(url, {
+    headers: {
+      Accept: "application/octet-stream",
+      "User-Agent": `PoE-Allflame-Voyage-Helper/${app.getVersion()}`,
+    },
+  });
+  if (!response.ok) throw new Error(`${label} download failed (HTTP ${response.status})`);
+  const contentLength = Number(response.headers.get("content-length") || 0);
+  if (contentLength > maxBytes) throw new Error(`${label} is larger than the allowed download size.`);
+  const buffer = Buffer.from(await response.arrayBuffer());
+  if (!buffer.length || buffer.length > maxBytes) throw new Error(`${label} has an invalid download size.`);
+  return buffer;
+}
+
+function portableExecutableTarget() {
+  const target = process.env.PORTABLE_EXECUTABLE_FILE;
+  if (!app.isPackaged || process.platform !== "win32" || !target) {
+    throw new Error("Automatic installation is available only in the packaged Windows portable app.");
+  }
+  const resolved = path.resolve(target);
+  if (path.extname(resolved).toLowerCase() !== ".exe" || !fs.existsSync(resolved)) {
+    throw new Error("The running portable executable could not be located safely.");
+  }
+  return resolved;
+}
+
+function assertTargetDirectoryWritable(target) {
+  const probe = path.join(path.dirname(target), `.voyage-update-write-test-${process.pid}`);
+  try {
+    fs.writeFileSync(probe, "write test", { flag: "wx" });
+    fs.unlinkSync(probe);
+  } catch (error) {
+    try { fs.unlinkSync(probe); } catch {}
+    throw new Error(`The app cannot update this location. Move it to a writable folder and try again. (${error.message})`);
+  }
+}
+
+async function downloadAndInstallUpdate() {
+  let stagingDirectory = null;
+  try {
+    if (state.update?.installing) throw new Error("An update installation is already in progress.");
+    if (!state.update?.available) throw new Error("Check for an available update first.");
+    if (state.update.assetName !== "PoE-Allflame-Voyage-Helper.exe" || !state.update.downloadUrl || !state.update.checksumUrl) {
+      throw new Error("This release does not include a portable EXE and SHA256SUMS.txt.");
+    }
+    const target = portableExecutableTarget();
+    assertTargetDirectoryWritable(target);
+    state.update.installing = true;
+    state.status = `Downloading and verifying v${state.update.latestVersion}...`;
+    broadcast();
+
+    const checksumBuffer = await fetchReleaseAsset(state.update.checksumUrl, 1024 * 1024, "checksum file");
+    const expectedSha256 = updateCore.checksumForAsset(checksumBuffer.toString("utf8"), state.update.assetName);
+    if (!expectedSha256) throw new Error(`SHA256SUMS.txt does not contain ${state.update.assetName}.`);
+    const executableBuffer = await fetchReleaseAsset(state.update.downloadUrl, MAX_UPDATE_BYTES, "portable executable");
+    const actualSha256 = crypto.createHash("sha256").update(executableBuffer).digest("hex");
+    if (actualSha256 !== expectedSha256) throw new Error("The downloaded update failed SHA-256 verification.");
+
+    stagingDirectory = fs.mkdtempSync(path.join(app.getPath("temp"), "voyage-helper-update-"));
+    const stagedExecutable = path.join(stagingDirectory, "verified-update.exe");
+    const stagedHelper = path.join(stagingDirectory, "install-update.ps1");
+    fs.writeFileSync(stagedExecutable, executableBuffer, { flag: "wx" });
+    fs.writeFileSync(stagedHelper, fs.readFileSync(UPDATE_HELPER_PATH, "utf8"), { flag: "wx" });
+
+    const helper = spawn("powershell.exe", [
+      "-NoLogo",
+      "-NoProfile",
+      "-NonInteractive",
+      "-ExecutionPolicy", "Bypass",
+      "-File", stagedHelper,
+      "-ProcessId", String(process.pid),
+      "-Source", stagedExecutable,
+      "-Target", target,
+      "-ExpectedSha256", expectedSha256,
+    ], { detached: true, windowsHide: true, stdio: "ignore" });
+    await new Promise((resolve, reject) => {
+      helper.once("spawn", resolve);
+      helper.once("error", reject);
+    });
+    helper.unref();
+
+    state.status = `Verified v${state.update.latestVersion}. Closing to install and restart...`;
+    broadcast();
+    setTimeout(() => app.quit(), 250);
+    return { started: true };
+  } catch (error) {
+    if (stagingDirectory) {
+      try { fs.rmSync(stagingDirectory, { recursive: true, force: true }); } catch {}
+    }
+    if (state.update) state.update.installing = false;
+    state.status = `Update installation failed: ${error.message}`;
+    broadcast();
+    throw error;
+  }
 }
 
 function importAreaModifier(tileIndex, text) {
@@ -329,7 +426,7 @@ ipcMain.handle("set-profile", (_, profile) => { if (core.PROFILES[profile]) stat
 ipcMain.handle("optimize", () => optimize());
 ipcMain.handle("toggle-overlay", () => false);
 ipcMain.handle("check-for-updates", () => checkForUpdates());
-ipcMain.handle("open-update-download", () => openUpdateDownload());
+ipcMain.handle("download-and-install-update", () => downloadAndInstallUpdate());
 
 const gotLock = app.requestSingleInstanceLock();
 if (!gotLock) app.quit();
