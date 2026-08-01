@@ -8,7 +8,6 @@ Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyag
 
 ## What works now
 
-- ExileKit-style parchment Voyage board is the main visual surface.
 - Click any outside edge slot directly on the board to change that tile side's fixed border mod.
 - Searchable border-mod picker: type keywords like `rarity`, `deck`, `lantern`, `pack`, `currency`, `rare`, or `strongbox` to quickly filter mods.
 - Corner tiles expose two border slots, edge tiles expose one, and tile 5 has no border modifier.
