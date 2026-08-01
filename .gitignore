@@ -1,0 +1,17 @@
+node_modules/
+dist/
+web-dist/
+release/
+backups/
+.gh-portable/
+coverage/
+*.log
+*.tar.gz
+.env
+.env.*
+!.env.example
+build/extracted-portable-icon.ico
+eng.traineddata
+.DS_Store
+Thumbs.db
+Desktop.ini

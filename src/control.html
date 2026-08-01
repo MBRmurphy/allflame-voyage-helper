@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PoE Allflame Voyage Helper</title>
+  <link rel="stylesheet" href="control.css" />
+</head>
+<body>
+  <div class="undersea-art" aria-hidden="true">
+    <span class="sea-flower flower-one">✿</span>
+    <span class="sea-flower flower-two">✿</span>
+    <span class="bubble bubble-one"></span>
+    <span class="bubble bubble-two"></span>
+    <span class="bubble bubble-three"></span>
+  </div>
+  <header>
+    <div>
+      <h1><span class="pineapple-mark">🍍</span> PoE Allflame Voyage Helper</h1>
+      <p id="status">Ready</p>
+    </div>
+    <div class="header-actions">
+      <select id="profile" title="Scoring profile"></select>
+      <button id="checkUpdate" title="Manually check GitHub Releases for a newer portable build">Check Updates</button>
+      <button id="importClipboard">Import Clipboard</button>
+      <button id="toggleSequenceImport">Start Seq Import</button>
+      <button id="optimize" class="primary">Find Best Voyage</button>
+      <button id="clearAll" class="danger">Clear All</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel board-panel">
+      <div class="section-title">
+        <div>
+          <h2>Voyage Board</h2>
+          <p class="muted">Click any outside border slot. Type in the picker to search mods by keyword. Corner tiles have two slots; tile 5 has no border modifier and is preferred as the central route bridge.</p>
+        </div>
+      </div>
+      <div id="voyageBoardPlanner"></div>
+    </section>
+
+    <aside class="side-stack">
+      <section class="panel import-panel">
+        <h2>Charts</h2>
+        <p class="muted">For one Chart, hover it in PoE, press <kbd>Ctrl+C</kbd>, then import. For many Charts, press <kbd>Ctrl+Shift+V</kbd> or Start Seq Import, then copy each Chart with <kbd>Ctrl+C</kbd>; press it again to stop. Right-click a Chart to exclude it.</p>
+        <textarea id="manualText" placeholder="Paste Chart item text here..."></textarea>
+        <div class="row">
+          <button id="importText">Import Text</button>
+          <button id="clearCharts" class="danger">Clear Charts</button>
+        </div>
+      </section>
+
+      <section class="panel inventory">
+        <div class="section-title">
+          <h2>Chart Inventory <span id="chartCount">0</span></h2>
+        </div>
+        <div id="chartList" class="chart-list"></div>
+      </section>
+
+      <section class="panel buff-summary-panel">
+        <h2>Best Board Buffs</h2>
+        <div id="buffSummary"><p class="muted">Optimize a board to see combined buffs.</p></div>
+      </section>
+
+      <section class="panel optimizer">
+        <h2>Optimizer Results</h2>
+        <div id="optimizerResults"></div>
+      </section>
+    </aside>
+  </main>
+
+  <div id="modPicker" class="mod-picker hidden" role="dialog" aria-modal="true">
+    <div class="mod-picker-card">
+      <div class="section-title">
+        <div>
+          <h2 id="modPickerTitle">Choose Border Mod</h2>
+          <p id="modPickerHint" class="muted"></p>
+        </div>
+        <button id="closeModPicker">Close</button>
+      </div>
+      <input id="modSearch" type="search" placeholder="Search: rarity, deck, lantern, rare, pack, currency..." />
+      <div id="modOptions" class="mod-options"></div>
+    </div>
+  </div>
+
+  <script src="control.js"></script>
+</body>
+</html>

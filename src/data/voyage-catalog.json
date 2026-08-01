@@ -1,0 +1,4839 @@
+{
+  "catalog": {
+    "schemaVersion": 7,
+    "status": "prelaunch-datamined",
+    "verifiedAt": "2026-07-24",
+    "sources": [
+      "https://www.youtube.com/watch?v=SCAAl94bJLo",
+      "https://poedb.tw/us/news",
+      "https://www.pathofexile.com/forum/view-thread/3985355",
+      "https://www.pathofexile.com/forum/view-thread/3985332",
+      "https://www.pathofexile.com/forum/view-thread/3986972",
+      "https://pastebin.com/RDLLR7jN"
+    ]
+  },
+  "chartBases": [
+    {
+      "id": "sandy-seabed",
+      "name": "Sandy Seabed Chart",
+      "confidence": "confirmed",
+      "sourceUrl": "https://www.pathofexile.com/forum/view-thread/3986972",
+      "verifiedAt": "2026-07-23",
+      "accent": "gold"
+    },
+    {
+      "id": "coral-forest",
+      "name": "Coral Forest Chart",
+      "confidence": "confirmed",
+      "sourceUrl": "https://www.pathofexile.com/forum/view-thread/3986972",
+      "verifiedAt": "2026-07-23",
+      "accent": "emerald"
+    },
+    {
+      "id": "coral-reef",
+      "name": "Coral Reef Chart",
+      "confidence": "confirmed",
+      "sourceUrl": "https://www.pathofexile.com/forum/view-thread/3986972",
+      "verifiedAt": "2026-07-23",
+      "accent": "coral"
+    }
+  ],
+  "chartPatterns": [
+    {
+      "id": "cross",
+      "name": "Four-way",
+      "connections": [
+        "north",
+        "east",
+        "south",
+        "west"
+      ]
+    },
+    {
+      "id": "tee-north",
+      "name": "North three-way",
+      "connections": [
+        "west",
+        "north",
+        "east"
+      ]
+    },
+    {
+      "id": "tee-east",
+      "name": "East three-way",
+      "connections": [
+        "north",
+        "east",
+        "south"
+      ]
+    },
+    {
+      "id": "tee-south",
+      "name": "South three-way",
+      "connections": [
+        "east",
+        "south",
+        "west"
+      ]
+    },
+    {
+      "id": "tee-west",
+      "name": "West three-way",
+      "connections": [
+        "south",
+        "west",
+        "north"
+      ]
+    },
+    {
+      "id": "corner-north-east",
+      "name": "North-east corner",
+      "connections": [
+        "north",
+        "east"
+      ]
+    },
+    {
+      "id": "corner-east-south",
+      "name": "East-south corner",
+      "connections": [
+        "east",
+        "south"
+      ]
+    },
+    {
+      "id": "corner-south-west",
+      "name": "South-west corner",
+      "connections": [
+        "south",
+        "west"
+      ]
+    },
+    {
+      "id": "corner-west-north",
+      "name": "West-north corner",
+      "connections": [
+        "west",
+        "north"
+      ]
+    },
+    {
+      "id": "straight-north-south",
+      "name": "North-south line",
+      "connections": [
+        "north",
+        "south"
+      ]
+    },
+    {
+      "id": "straight-east-west",
+      "name": "East-west line",
+      "connections": [
+        "east",
+        "west"
+      ]
+    },
+    {
+      "id": "end-north",
+      "name": "North end",
+      "connections": [
+        "north"
+      ]
+    },
+    {
+      "id": "end-east",
+      "name": "East end",
+      "connections": [
+        "east"
+      ]
+    },
+    {
+      "id": "end-south",
+      "name": "South end",
+      "connections": [
+        "south"
+      ]
+    },
+    {
+      "id": "end-west",
+      "name": "West end",
+      "connections": [
+        "west"
+      ]
+    }
+  ],
+  "chartModifiers": [
+    {
+      "id": "monster-status-ailment-immunity-very-high",
+      "statId": "MapDeepwaterChartMonsterStatusAilmentImmunityVeryHigh",
+      "name": "of Insulation",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have 80% chance to Avoid Elemental Ailments"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-status-ailment-immunity-high",
+      "statId": "MapDeepwaterChartMonsterStatusAilmentImmunityHigh",
+      "name": "of Insulation",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have 60% chance to Avoid Elemental Ailments"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-status-ailment-immunity-med",
+      "statId": "MapDeepwaterChartMonsterStatusAilmentImmunityMed",
+      "name": "of Insulation",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have 40% chance to Avoid Elemental Ailments"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-status-ailment-immunity-low",
+      "statId": "MapDeepwaterChartMonsterStatusAilmentImmunityLow",
+      "name": "of Insulation",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have 20% chance to Avoid Elemental Ailments"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-physical-resistance-very-high",
+      "statId": "MapDeepwaterChartMonsterPhysicalResistanceVeryHigh",
+      "name": "Armoured",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(21-35)% Monster Physical Damage Reduction"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-physical-resistance-high",
+      "statId": "MapDeepwaterChartMonsterPhysicalResistanceHigh",
+      "name": "Armoured",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(14-20)% Monster Physical Damage Reduction"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-physical-resistance-med",
+      "statId": "MapDeepwaterChartMonsterPhysicalResistanceMed",
+      "name": "Armoured",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(9-13)% Monster Physical Damage Reduction"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-physical-resistance-low",
+      "statId": "MapDeepwaterChartMonsterPhysicalResistanceLow",
+      "name": "Armoured",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(5-8)% Monster Physical Damage Reduction"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-cannot-be-stunned",
+      "statId": "MapDeepwaterChartMonsterCannotBeStunned",
+      "name": "Unwavering",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters cannot be Stunned",
+        "(10-20)% more Monster Life"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-life-very-high",
+      "statId": "MapDeepwaterChartMonsterLifeVeryHigh",
+      "name": "Fecund",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "(46-60)% more Monster Life"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-life-high",
+      "statId": "MapDeepwaterChartMonsterLifeHigh",
+      "name": "Fecund",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "(35-45)% more Monster Life"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-life-med",
+      "statId": "MapDeepwaterChartMonsterLifeMed",
+      "name": "Fecund",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "(20-34)% more Monster Life"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-life-low",
+      "statId": "MapDeepwaterChartMonsterLifeLow",
+      "name": "Fecund",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "(10-19)% more Monster Life"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-damage-very-high",
+      "statId": "MapDeepwaterChartMonsterDamageVeryHigh",
+      "name": "Savage",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "(26-35)% increased Monster Damage"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-damage-high",
+      "statId": "MapDeepwaterChartMonsterDamageHigh",
+      "name": "Savage",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "(21-25)% increased Monster Damage"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-damage-med",
+      "statId": "MapDeepwaterChartMonsterDamageMed",
+      "name": "Savage",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "(15-20)% increased Monster Damage"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-damage-low",
+      "statId": "MapDeepwaterChartMonsterDamageLow",
+      "name": "Savage",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "(10-14)% increased Monster Damage"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-fire-damage-very-high",
+      "statId": "MapDeepwaterChartMonsterFireDamageVeryHigh",
+      "name": "Burning",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (21-35)% extra Physical Damage as Fire"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-fire-damage-high",
+      "statId": "MapDeepwaterChartMonsterFireDamageHigh",
+      "name": "Burning",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (15-20)% extra Physical Damage as Fire"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-fire-damage-med",
+      "statId": "MapDeepwaterChartMonsterFireDamageMed",
+      "name": "Burning",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (9-14)% extra Physical Damage as Fire"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-fire-damage-low",
+      "statId": "MapDeepwaterChartMonsterFireDamageLow",
+      "name": "Burning",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 12,
+        "unit": "%",
+        "line": "12% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (5-8)% extra Physical Damage as Fire"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-cold-damage-very-high",
+      "statId": "MapDeepwaterChartMonsterColdDamageVeryHigh",
+      "name": "Freezing",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (21-35)% extra Physical Damage as Cold"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-cold-damage-high",
+      "statId": "MapDeepwaterChartMonsterColdDamageHigh",
+      "name": "Freezing",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (15-20)% extra Physical Damage as Cold"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-cold-damage-med",
+      "statId": "MapDeepwaterChartMonsterColdDamageMed",
+      "name": "Freezing",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (9-14)% extra Physical Damage as Cold"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-cold-damage-low",
+      "statId": "MapDeepwaterChartMonsterColdDamageLow",
+      "name": "Freezing",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 12,
+        "unit": "%",
+        "line": "12% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (5-8)% extra Physical Damage as Cold"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-lightning-damage-very-high",
+      "statId": "MapDeepwaterChartMonsterLightningDamageVeryHigh",
+      "name": "Shocking",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (21-35)% extra Physical Damage as Lightning"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-lightning-damage-high",
+      "statId": "MapDeepwaterChartMonsterLightningDamageHigh",
+      "name": "Shocking",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (15-20)% extra Physical Damage as Lightning"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-lightning-damage-med",
+      "statId": "MapDeepwaterChartMonsterLightningDamageMed",
+      "name": "Shocking",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (9-14)% extra Physical Damage as Lightning"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-lightning-damage-low",
+      "statId": "MapDeepwaterChartMonsterLightningDamageLow",
+      "name": "Shocking",
+      "rewardCounterweight": {
+        "id": "item-rarity",
+        "label": "Item Rarity",
+        "value": 12,
+        "unit": "%",
+        "line": "12% increased Rarity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters deal (5-8)% extra Physical Damage as Lightning"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-fast-very-high",
+      "statId": "MapDeepwaterChartMonsterFastVeryHigh",
+      "name": "Fleet",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Pack size"
+      },
+      "areaModifiers": [
+        "30% increased Monster Movement Speed",
+        "30% increased Monster Attack Speed",
+        "30% increased Monster Cast Speed"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-fast-high",
+      "statId": "MapDeepwaterChartMonsterFastHigh",
+      "name": "Fleet",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 16,
+        "unit": "%",
+        "line": "16% increased Pack size"
+      },
+      "areaModifiers": [
+        "20% increased Monster Movement Speed",
+        "20% increased Monster Attack Speed",
+        "20% increased Monster Cast Speed"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-fast-med",
+      "statId": "MapDeepwaterChartMonsterFastMed",
+      "name": "Fleet",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 14,
+        "unit": "%",
+        "line": "14% increased Pack size"
+      },
+      "areaModifiers": [
+        "10% increased Monster Movement Speed",
+        "10% increased Monster Attack Speed",
+        "10% increased Monster Cast Speed"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-multiple-projectiles-high",
+      "statId": "MapDeepwaterChartMonsterMultipleProjectilesHigh",
+      "name": "Splitting",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters fire 2 additional Projectiles"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-multiple-projectiles-med",
+      "statId": "MapDeepwaterChartMonsterMultipleProjectilesMed",
+      "name": "Splitting",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 16,
+        "unit": "%",
+        "line": "16% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters fire 2 additional Projectiles"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-area-of-effect-very-high",
+      "statId": "MapDeepwaterChartMonsterAreaOfEffectVeryHigh",
+      "name": "of Giants",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters have (46-60)% increased Area of Effect"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-area-of-effect-high",
+      "statId": "MapDeepwaterChartMonsterAreaOfEffectHigh",
+      "name": "of Giants",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 16,
+        "unit": "%",
+        "line": "16% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters have (41-45)% increased Area of Effect"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-area-of-effect-med",
+      "statId": "MapDeepwaterChartMonsterAreaOfEffectMed",
+      "name": "of Giants",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 14,
+        "unit": "%",
+        "line": "14% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters have (30-40)% increased Area of Effect"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-critical-strikes-and-damage-very-high",
+      "statId": "MapDeepwaterChartMonsterCriticalStrikesAndDamageVeryHigh",
+      "name": "of Deadliness",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters have (242-350)% increased Critical Strike Chance",
+        "+(41-45)% to Monster Critical Strike Multiplier"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-critical-strikes-and-damage-high",
+      "statId": "MapDeepwaterChartMonsterCriticalStrikesAndDamageHigh",
+      "name": "of Deadliness",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 16,
+        "unit": "%",
+        "line": "16% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters have (201-240)% increased Critical Strike Chance",
+        "+(41-45)% to Monster Critical Strike Multiplier"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-critical-strikes-and-damage-med",
+      "statId": "MapDeepwaterChartMonsterCriticalStrikesAndDamageMed",
+      "name": "of Deadliness",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 14,
+        "unit": "%",
+        "line": "14% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monsters have (180-200)% increased Critical Strike Chance",
+        "+(31-40)% to Monster Critical Strike Multiplier"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "chilled-ground",
+      "statId": "MapDeepwaterChartChilledGround",
+      "name": "of Ice",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 50,
+        "unit": "%",
+        "line": "50% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Area has patches of Chilled Ground"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "shocked-ground",
+      "statId": "MapDeepwaterChartShockedGround",
+      "name": "of Lightning",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 50,
+        "unit": "%",
+        "line": "50% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Area has patches of Shocked Ground which increase Damage taken by 10%"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-base-self-critical-multiplier-high",
+      "statId": "MapDeepwaterChartMonstersBaseSelfCriticalMultiplierHigh",
+      "name": "of Toughness",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters take (30-45)% reduced Extra Damage from Critical Strikes"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-base-self-critical-multiplier-med",
+      "statId": "MapDeepwaterChartMonstersBaseSelfCriticalMultiplierMed",
+      "name": "of Toughness",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters take (20-29)% reduced Extra Damage from Critical Strikes"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-curse-effect-on-self-final",
+      "statId": "MapDeepwaterChartMonstersCurseEffectOnSelfFinal",
+      "name": "Hexwarded",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "50% less effect of Curses on Monsters"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-cant-be-slowed-or-taunted",
+      "statId": "MapDeepwaterChartMonstersCantBeSlowedOrTaunted",
+      "name": "Unstoppable",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters' Action Speed cannot be modified to below Base Value Monsters' Movement Speed cannot be modified to below Base Value",
+        "Monsters cannot be Taunted"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-all-resistances-very-high",
+      "statId": "MapDeepwaterChartMonstersAllResistancesVeryHigh",
+      "name": "Resistant",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(26-40)% Monster Chaos Resistance",
+        "+(26-40)% Monster Elemental Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-all-resistances-high",
+      "statId": "MapDeepwaterChartMonstersAllResistancesHigh",
+      "name": "Resistant",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(20-25)% Monster Chaos Resistance",
+        "+(20-25)% Monster Elemental Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-all-resistances-med",
+      "statId": "MapDeepwaterChartMonstersAllResistancesMed",
+      "name": "Resistant",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(10-19)% Monster Chaos Resistance",
+        "+(11-19)% Monster Elemental Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-all-resistances-low",
+      "statId": "MapDeepwaterChartMonstersAllResistancesLow",
+      "name": "Resistant",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "+(5-10)% Monster Elemental Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-avoid-poison-bleed-blind",
+      "statId": "MapDeepwaterChartMonstersAvoidPoisonBleedBlind",
+      "name": "Impervious",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have a 40% chance to avoid Poison, Impale, and Bleeding"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-poisoning",
+      "statId": "MapDeepwaterChartMonsterPoisoning",
+      "name": "of Venom",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters Poison on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-chain",
+      "statId": "MapDeepwaterChartMonsterChain",
+      "name": "Chaining",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters' skills Chain 2 additional times"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monster-hexproof",
+      "statId": "MapDeepwaterChartMonsterHexproof",
+      "name": "Hexproof",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters are Hexproof"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-frenzy-charge-on-hit-high",
+      "statId": "MapDeepwaterChartMonstersFrenzyChargeOnHitHigh",
+      "name": "of Frenzy",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 70,
+        "unit": "%",
+        "line": "70% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain a Frenzy Charge on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-frenzy-charge-on-hit-med",
+      "statId": "MapDeepwaterChartMonstersFrenzyChargeOnHitMed",
+      "name": "of Frenzy",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 50,
+        "unit": "%",
+        "line": "50% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have 50% chance to gain a Frenzy Charge on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-endurance-charge-on-hit-high",
+      "statId": "MapDeepwaterChartMonstersEnduranceChargeOnHitHigh",
+      "name": "of Endurance",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 70,
+        "unit": "%",
+        "line": "70% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain an Endurance Charge on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-endurance-charge-on-hit-med",
+      "statId": "MapDeepwaterChartMonstersEnduranceChargeOnHitMed",
+      "name": "of Endurance",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 50,
+        "unit": "%",
+        "line": "50% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have 50% chance to gain an Endurance Charge on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-power-charge-on-hit-high",
+      "statId": "MapDeepwaterChartMonstersPowerChargeOnHitHigh",
+      "name": "of Power",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 70,
+        "unit": "%",
+        "line": "70% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain a Power Charge on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-power-charge-on-hit-med",
+      "statId": "MapDeepwaterChartMonstersPowerChargeOnHitMed",
+      "name": "of Power",
+      "rewardCounterweight": {
+        "id": "gold",
+        "label": "Gold",
+        "value": 50,
+        "unit": "%",
+        "line": "50% increased Gold found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have 50% chance to gain a Power Charge on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-chance-to-suppress-spells-very-high",
+      "statId": "MapDeepwaterChartMonstersChanceToSuppressSpellsVeryHigh",
+      "name": "Oppressive",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have +80% chance to Suppress Spell Damage"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-chance-to-suppress-spells-high",
+      "statId": "MapDeepwaterChartMonstersChanceToSuppressSpellsHigh",
+      "name": "Oppressive",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have +60% chance to Suppress Spell Damage"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-chance-to-suppress-spells-med",
+      "statId": "MapDeepwaterChartMonstersChanceToSuppressSpellsMed",
+      "name": "Oppressive",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters have +40% chance to Suppress Spell Damage"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-maximum-life-added-energy-shield-very-high",
+      "statId": "MapDeepwaterChartMonstersMaximumLifeAddedEnergyShieldVeryHigh",
+      "name": "Buffered",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain (51-80)% of Maximum Life as Extra Maximum Energy Shield"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-maximum-life-added-energy-shield-high",
+      "statId": "MapDeepwaterChartMonstersMaximumLifeAddedEnergyShieldHigh",
+      "name": "Buffered",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 32,
+        "unit": "%",
+        "line": "32% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain (35-50)% of Maximum Life as Extra Maximum Energy Shield"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-maximum-life-added-energy-shield-med",
+      "statId": "MapDeepwaterChartMonstersMaximumLifeAddedEnergyShieldMed",
+      "name": "Buffered",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 28,
+        "unit": "%",
+        "line": "28% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain (20-34)% of Maximum Life as Extra Maximum Energy Shield"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-maximum-life-added-energy-shield-low",
+      "statId": "MapDeepwaterChartMonstersMaximumLifeAddedEnergyShieldLow",
+      "name": "Buffered",
+      "rewardCounterweight": {
+        "id": "item-quantity",
+        "label": "Item Quantity",
+        "value": 20,
+        "unit": "%",
+        "line": "20% increased Quantity of Items found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain (10-19)% of Maximum Life as Extra Maximum Energy Shield"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-blind-on-hit",
+      "statId": "MapDeepwaterChartMonstersBlindOnHit",
+      "name": "of Blinding",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters Blind on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-maim-on-hit",
+      "statId": "MapDeepwaterChartMonstersMaimOnHit",
+      "name": "of Carnage",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters Maim on Hit with Attacks"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-hinder-on-hit",
+      "statId": "MapDeepwaterChartMonstersHinderOnHit",
+      "name": "of Impedance",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters Hinder on Hit with Spells"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-resist-penetration-high",
+      "statId": "MapDeepwaterChartMonstersResistPenetrationHigh",
+      "name": "of Penetration",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monster Damage Penetrates (13-15)% Elemental Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-resist-penetration-med",
+      "statId": "MapDeepwaterChartMonstersResistPenetrationMed",
+      "name": "of Penetration",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 16,
+        "unit": "%",
+        "line": "16% increased Pack size"
+      },
+      "areaModifiers": [
+        "Monster Damage Penetrates (8-12)% Elemental Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "monsters-remove-charges",
+      "statId": "MapDeepwaterChartMonstersRemoveCharges",
+      "name": "of Siphoning",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters steal Power, Frenzy and Endurance charges on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "minus-maximum-resistances-very-high",
+      "statId": "MapDeepwaterChartMinusMaximumResistancesVeryHigh",
+      "name": "of Exposure",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 18,
+        "unit": "%",
+        "line": "18% increased Pack size"
+      },
+      "areaModifiers": [
+        "Players have -(14-12)% to all maximum Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "minus-maximum-resistances-high",
+      "statId": "MapDeepwaterChartMinusMaximumResistancesHigh",
+      "name": "of Exposure",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 16,
+        "unit": "%",
+        "line": "16% increased Pack size"
+      },
+      "areaModifiers": [
+        "Players have -(12-10)% to all maximum Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "minus-maximum-resistances-med",
+      "statId": "MapDeepwaterChartMinusMaximumResistancesMed",
+      "name": "of Exposure",
+      "rewardCounterweight": {
+        "id": "pack-size",
+        "label": "Monster Pack Size",
+        "value": 14,
+        "unit": "%",
+        "line": "14% increased Pack size"
+      },
+      "areaModifiers": [
+        "Players have -(9-6)% to all maximum Resistances"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "damage-as-chaos-very-high",
+      "statId": "MapDeepwaterChartDamageAsChaosVeryHigh",
+      "name": "Profane",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 45,
+        "unit": "%",
+        "line": "45% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain (21-29)% of their Physical Damage as Extra Chaos Damage",
+        "Monsters Inflict Withered for 2 seconds on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "damage-as-chaos-high",
+      "statId": "MapDeepwaterChartDamageAsChaosHigh",
+      "name": "Profane",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain (15-20)% of their Physical Damage as Extra Chaos Damage",
+        "Monsters Inflict Withered for 2 seconds on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    },
+    {
+      "id": "damage-as-chaos-med",
+      "statId": "MapDeepwaterChartDamageAsChaosMed",
+      "name": "Profane",
+      "rewardCounterweight": {
+        "id": "dead-mans-sulphur",
+        "label": "Dead Man's Sulphur",
+        "value": 30,
+        "unit": "%",
+        "line": "30% increased Dead Man's Sulphur found in this Area"
+      },
+      "areaModifiers": [
+        "Monsters gain (10-14)% of their Physical Damage as Extra Chaos Damage",
+        "Monsters Inflict Withered for 2 seconds on Hit"
+      ],
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24"
+    }
+  ],
+  "chartImplicits": [
+    {
+      "id": "adjacent-essence1",
+      "statId": "MapDeepwaterChartAdjacentEssence1",
+      "familyId": "adjacent-essence",
+      "familyName": "Imprisoned Monsters",
+      "tier": 1,
+      "tierLabel": "1-2",
+      "name": "1-2 Imprisoned Monsters",
+      "category": "Encounter",
+      "summary": "Adjacent Areas contain (1-2) additional Imprisoned Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "violet",
+      "icon": "essence",
+      "effects": [
+        {
+          "id": "adjacent-essence",
+          "scope": "connected",
+          "label": "Imprisoned Monsters",
+          "aggregation": "range",
+          "minimumValue": 1,
+          "maximumValue": 2,
+          "unit": "monsters"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-essence2",
+      "statId": "MapDeepwaterChartAdjacentEssence2",
+      "familyId": "adjacent-essence",
+      "familyName": "Imprisoned Monsters",
+      "tier": 2,
+      "tierLabel": "2-4",
+      "name": "2-4 Imprisoned Monsters",
+      "category": "Encounter",
+      "summary": "Adjacent Areas contain (2-4) additional Imprisoned Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "violet",
+      "icon": "essence",
+      "effects": [
+        {
+          "id": "adjacent-essence",
+          "scope": "connected",
+          "label": "Imprisoned Monsters",
+          "aggregation": "range",
+          "minimumValue": 2,
+          "maximumValue": 4,
+          "unit": "monsters"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-essence3",
+      "statId": "MapDeepwaterChartAdjacentEssence3",
+      "familyId": "adjacent-essence",
+      "familyName": "Imprisoned Monsters",
+      "tier": 3,
+      "tierLabel": "5",
+      "name": "5 Imprisoned Monsters",
+      "category": "Encounter",
+      "summary": "Adjacent Areas contain 5 additional Imprisoned Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "violet",
+      "icon": "essence",
+      "effects": [
+        {
+          "id": "adjacent-essence",
+          "scope": "connected",
+          "label": "Imprisoned Monsters",
+          "aggregation": "sum",
+          "value": 5,
+          "unit": "monsters"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-strongboxes1",
+      "statId": "MapDeepwaterChartAdjacentStrongboxes1",
+      "familyId": "adjacent-strongboxes",
+      "familyName": "Strongboxes",
+      "tier": 1,
+      "tierLabel": "1",
+      "name": "1 Strongbox",
+      "category": "Reward",
+      "summary": "Adjacent Areas contains an additional Strongbox",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "strongbox",
+      "effects": [
+        {
+          "id": "adjacent-strongboxes",
+          "scope": "connected",
+          "label": "Strongboxes",
+          "aggregation": "sum",
+          "value": 1,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-strongboxes2",
+      "statId": "MapDeepwaterChartAdjacentStrongboxes2",
+      "familyId": "adjacent-strongboxes",
+      "familyName": "Strongboxes",
+      "tier": 2,
+      "tierLabel": "2-4",
+      "name": "2-4 Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain (2-4) additional Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "strongbox",
+      "effects": [
+        {
+          "id": "adjacent-strongboxes",
+          "scope": "connected",
+          "label": "Strongboxes",
+          "aggregation": "range",
+          "minimumValue": 2,
+          "maximumValue": 4,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-strongboxes3",
+      "statId": "MapDeepwaterChartAdjacentStrongboxes3",
+      "familyId": "adjacent-strongboxes",
+      "familyName": "Strongboxes",
+      "tier": 3,
+      "tierLabel": "5",
+      "name": "5 Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 5 additional Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "strongbox",
+      "effects": [
+        {
+          "id": "adjacent-strongboxes",
+          "scope": "connected",
+          "label": "Strongboxes",
+          "aggregation": "sum",
+          "value": 5,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-octopus-packs1",
+      "statId": "MapDeepwaterChartAdjacentOctopusPacks1",
+      "familyId": "adjacent-octopus-packs",
+      "familyName": "Octopus packs",
+      "tier": 1,
+      "tierLabel": "8-10",
+      "name": "8-10 Octopus packs",
+      "category": "Monster",
+      "summary": "Area contains (8-10) additional packs of Octopi",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "teal",
+      "icon": "octopus",
+      "effects": [
+        {
+          "id": "adjacent-octopus-packs",
+          "scope": "connected",
+          "label": "Octopus packs",
+          "aggregation": "range",
+          "minimumValue": 8,
+          "maximumValue": 10,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-octopus-packs2",
+      "statId": "MapDeepwaterChartAdjacentOctopusPacks2",
+      "familyId": "adjacent-octopus-packs",
+      "familyName": "Octopus packs",
+      "tier": 2,
+      "tierLabel": "11-14",
+      "name": "11-14 Octopus packs",
+      "category": "Monster",
+      "summary": "Area contains (11-14) additional packs of Octopi",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "teal",
+      "icon": "octopus",
+      "effects": [
+        {
+          "id": "adjacent-octopus-packs",
+          "scope": "connected",
+          "label": "Octopus packs",
+          "aggregation": "range",
+          "minimumValue": 11,
+          "maximumValue": 14,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-crab-packs1",
+      "statId": "MapDeepwaterChartAdjacentCrabPacks1",
+      "familyId": "adjacent-crab-packs",
+      "familyName": "Crab packs",
+      "tier": 1,
+      "tierLabel": "8-10",
+      "name": "8-10 Crab packs",
+      "category": "Monster",
+      "summary": "Area contains (8-10) additional packs of Crabs",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "crab",
+      "effects": [
+        {
+          "id": "adjacent-crab-packs",
+          "scope": "connected",
+          "label": "Crab packs",
+          "aggregation": "range",
+          "minimumValue": 8,
+          "maximumValue": 10,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-crab-packs2",
+      "statId": "MapDeepwaterChartAdjacentCrabPacks2",
+      "familyId": "adjacent-crab-packs",
+      "familyName": "Crab packs",
+      "tier": 2,
+      "tierLabel": "11-14",
+      "name": "11-14 Crab packs",
+      "category": "Monster",
+      "summary": "Area contains (11-14) additional packs of Crabs",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "crab",
+      "effects": [
+        {
+          "id": "adjacent-crab-packs",
+          "scope": "connected",
+          "label": "Crab packs",
+          "aggregation": "range",
+          "minimumValue": 11,
+          "maximumValue": 14,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-increased-magic-monsters1",
+      "statId": "MapDeepwaterChartAdjacentIncreasedMagicMonsters1",
+      "familyId": "adjacent-increased-magic-monsters",
+      "familyName": "Increased Magic Monsters",
+      "tier": 1,
+      "tierLabel": "30%",
+      "name": "30% Increased Magic Monsters",
+      "category": "Monster",
+      "summary": "30% increased Magic Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "adjacent-increased-magic-monsters",
+          "scope": "connected",
+          "label": "Increased Magic Monsters",
+          "aggregation": "per-area",
+          "value": 30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-increased-magic-monsters2",
+      "statId": "MapDeepwaterChartAdjacentIncreasedMagicMonsters2",
+      "familyId": "adjacent-increased-magic-monsters",
+      "familyName": "Increased Magic Monsters",
+      "tier": 2,
+      "tierLabel": "60%",
+      "name": "60% Increased Magic Monsters",
+      "category": "Monster",
+      "summary": "60% increased Magic Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "adjacent-increased-magic-monsters",
+          "scope": "connected",
+          "label": "Increased Magic Monsters",
+          "aggregation": "per-area",
+          "value": 60,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-increased-rare-monsters1",
+      "statId": "MapDeepwaterChartAdjacentIncreasedRareMonsters1",
+      "familyId": "adjacent-increased-rare-monsters",
+      "familyName": "Increased number of Rare Monsters",
+      "tier": 1,
+      "tierLabel": "30%",
+      "name": "30% Increased number of Rare Monsters",
+      "category": "Monster",
+      "summary": "30% increased number of Rare Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "adjacent-increased-rare-monsters",
+          "scope": "connected",
+          "label": "Increased number of Rare Monsters",
+          "aggregation": "per-area",
+          "value": 30,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-increased-rare-monsters2",
+      "statId": "MapDeepwaterChartAdjacentIncreasedRareMonsters2",
+      "familyId": "adjacent-increased-rare-monsters",
+      "familyName": "Increased number of Rare Monsters",
+      "tier": 2,
+      "tierLabel": "60%",
+      "name": "60% Increased number of Rare Monsters",
+      "category": "Monster",
+      "summary": "60% increased number of Rare Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "adjacent-increased-rare-monsters",
+          "scope": "connected",
+          "label": "Increased number of Rare Monsters",
+          "aggregation": "per-area",
+          "value": 60,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-lost-message1",
+      "statId": "MapDeepwaterChartAdjacentLostMessage1",
+      "familyId": "adjacent-lost-message",
+      "familyName": "Messages in Bottles",
+      "tier": 1,
+      "tierLabel": "1",
+      "name": "1 Message in a Bottle",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain an additional Message in a Bottle",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "message-bottle",
+      "effects": [
+        {
+          "id": "adjacent-lost-message",
+          "scope": "connected",
+          "label": "Messages in Bottles",
+          "aggregation": "sum",
+          "value": 1,
+          "unit": "bottles"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-lost-message2",
+      "statId": "MapDeepwaterChartAdjacentLostMessage2",
+      "familyId": "adjacent-lost-message",
+      "familyName": "Messages in Bottles",
+      "tier": 2,
+      "tierLabel": "2",
+      "name": "2 Messages in Bottles",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 2 additional Messages in Bottles",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "message-bottle",
+      "effects": [
+        {
+          "id": "adjacent-lost-message",
+          "scope": "connected",
+          "label": "Messages in Bottles",
+          "aggregation": "sum",
+          "value": 2,
+          "unit": "bottles"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-fish",
+      "statId": "MapDeepwaterChartAdjacentFish",
+      "familyId": "adjacent-fish",
+      "familyName": "Highly prized and exotic Fish",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Highly prized and exotic Fish",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain highly prized and exotic Fish",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "teal",
+      "icon": "fish",
+      "effects": [
+        {
+          "id": "adjacent-fish",
+          "scope": "connected",
+          "label": "Highly prized and exotic Fish",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-wisps1",
+      "statId": "MapDeepwaterChartAdjacentWisps1",
+      "familyId": "adjacent-wisps",
+      "familyName": "Wildwood Wisp Empowerment",
+      "tier": 1,
+      "tierLabel": "2000",
+      "name": "2000 Wisp Empowerment",
+      "category": "Encounter",
+      "summary": "Monsters have a chance to be Empowered by 2000 Wildwood Wisps",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "teal",
+      "icon": "affliction",
+      "effects": [
+        {
+          "id": "adjacent-wisps",
+          "scope": "connected",
+          "label": "Wildwood Wisp Empowerment",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-wisps2",
+      "statId": "MapDeepwaterChartAdjacentWisps2",
+      "familyId": "adjacent-wisps",
+      "familyName": "Wildwood Wisp Empowerment",
+      "tier": 2,
+      "tierLabel": "4000",
+      "name": "4000 Wisp Empowerment",
+      "category": "Encounter",
+      "summary": "Monsters have a chance to be Empowered by 4000 Wildwood Wisps",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "teal",
+      "icon": "affliction",
+      "effects": [
+        {
+          "id": "adjacent-wisps",
+          "scope": "connected",
+          "label": "Wildwood Wisp Empowerment",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-corrupted",
+      "statId": "MapDeepwaterChartAdjacentCorrupted",
+      "familyId": "adjacent-corrupted",
+      "familyName": "Atziri's Influence",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Atziri's Influence",
+      "category": "Reward",
+      "summary": "Atziri's Influence",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "coral",
+      "icon": "corruption",
+      "effects": [
+        {
+          "id": "adjacent-corrupted",
+          "scope": "connected",
+          "label": "Atziri's Influence",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-gold-convert1",
+      "statId": "MapDeepwaterChartAdjacentGoldConvert1",
+      "familyId": "adjacent-gold-convert",
+      "familyName": "Equipment converted to Gold",
+      "tier": 1,
+      "tierLabel": "40%",
+      "name": "40% Equipment converted to Gold",
+      "category": "Monster",
+      "summary": "40% of Equipment dropped by Monsters in Area is converted to Gold",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "gold",
+      "effects": [
+        {
+          "id": "adjacent-gold-convert",
+          "scope": "connected",
+          "label": "Equipment converted to Gold",
+          "aggregation": "per-area",
+          "value": 40,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-gold-convert2",
+      "statId": "MapDeepwaterChartAdjacentGoldConvert2",
+      "familyId": "adjacent-gold-convert",
+      "familyName": "Equipment converted to Gold",
+      "tier": 2,
+      "tierLabel": "80%",
+      "name": "80% Equipment converted to Gold",
+      "category": "Monster",
+      "summary": "80% of Equipment dropped by Monsters in Area is converted to Gold",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "gold",
+      "effects": [
+        {
+          "id": "adjacent-gold-convert",
+          "scope": "connected",
+          "label": "Equipment converted to Gold",
+          "aggregation": "per-area",
+          "value": 80,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-torment-cages1",
+      "statId": "MapDeepwaterChartAdjacentTormentCages1",
+      "familyId": "adjacent-torment-cages",
+      "familyName": "Cages of Tormented Spirits",
+      "tier": 1,
+      "tierLabel": "1",
+      "name": "1 Cage of Tormented Spirits",
+      "category": "Encounter",
+      "summary": "Adjacent Areas contain an additional cage of Tormented Spirits",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "torment",
+      "effects": [
+        {
+          "id": "adjacent-torment-cages",
+          "scope": "connected",
+          "label": "Cages of Tormented Spirits",
+          "aggregation": "sum",
+          "value": 1,
+          "unit": "cages"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-torment-cages2",
+      "statId": "MapDeepwaterChartAdjacentTormentCages2",
+      "familyId": "adjacent-torment-cages",
+      "familyName": "Cages of Tormented Spirits",
+      "tier": 2,
+      "tierLabel": "2",
+      "name": "2 Cages of Tormented Spirits",
+      "category": "Encounter",
+      "summary": "Adjacent Areas contain 2 additional cages of Tormented Spirits",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "torment",
+      "effects": [
+        {
+          "id": "adjacent-torment-cages",
+          "scope": "connected",
+          "label": "Cages of Tormented Spirits",
+          "aggregation": "sum",
+          "value": 2,
+          "unit": "cages"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-diviner-box1",
+      "statId": "MapDeepwaterChartAdjacentDivinerBox1",
+      "familyId": "adjacent-diviner-box",
+      "familyName": "Diviner's Strongboxes",
+      "tier": 1,
+      "tierLabel": "2",
+      "name": "2 Diviner's Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 2 additional Diviner's Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "divine-orb",
+      "effects": [
+        {
+          "id": "adjacent-diviner-box",
+          "scope": "connected",
+          "label": "Diviner's Strongboxes",
+          "aggregation": "sum",
+          "value": 2,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-diviner-box2",
+      "statId": "MapDeepwaterChartAdjacentDivinerBox2",
+      "familyId": "adjacent-diviner-box",
+      "familyName": "Diviner's Strongboxes",
+      "tier": 2,
+      "tierLabel": "3",
+      "name": "3 Diviner's Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 3 additional Diviner's Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "divine-orb",
+      "effects": [
+        {
+          "id": "adjacent-diviner-box",
+          "scope": "connected",
+          "label": "Diviner's Strongboxes",
+          "aggregation": "sum",
+          "value": 3,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-arcanist-box1",
+      "statId": "MapDeepwaterChartAdjacentArcanistBox1",
+      "familyId": "adjacent-arcanist-box",
+      "familyName": "Arcanist's Strongboxes",
+      "tier": 1,
+      "tierLabel": "2",
+      "name": "2 Arcanist's Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 2 additional Arcanist's Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "strongbox",
+      "effects": [
+        {
+          "id": "adjacent-arcanist-box",
+          "scope": "connected",
+          "label": "Arcanist's Strongboxes",
+          "aggregation": "sum",
+          "value": 2,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-arcanist-box2",
+      "statId": "MapDeepwaterChartAdjacentArcanistBox2",
+      "familyId": "adjacent-arcanist-box",
+      "familyName": "Arcanist's Strongboxes",
+      "tier": 2,
+      "tierLabel": "3",
+      "name": "3 Arcanist's Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 3 additional Arcanist's Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "strongbox",
+      "effects": [
+        {
+          "id": "adjacent-arcanist-box",
+          "scope": "connected",
+          "label": "Arcanist's Strongboxes",
+          "aggregation": "sum",
+          "value": 3,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-operative-box1",
+      "statId": "MapDeepwaterChartAdjacentOperativeBox1",
+      "familyId": "adjacent-operative-box",
+      "familyName": "Operative's Strongboxes",
+      "tier": 1,
+      "tierLabel": "2",
+      "name": "2 Operative's Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 2 additional Operative's Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "strongbox",
+      "effects": [
+        {
+          "id": "adjacent-operative-box",
+          "scope": "connected",
+          "label": "Operative's Strongboxes",
+          "aggregation": "sum",
+          "value": 2,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-operative-box2",
+      "statId": "MapDeepwaterChartAdjacentOperativeBox2",
+      "familyId": "adjacent-operative-box",
+      "familyName": "Operative's Strongboxes",
+      "tier": 2,
+      "tierLabel": "3",
+      "name": "3 Operative's Strongboxes",
+      "category": "Reward",
+      "summary": "Adjacent Areas contain 3 additional Operative's Strongboxes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "strongbox",
+      "effects": [
+        {
+          "id": "adjacent-operative-box",
+          "scope": "connected",
+          "label": "Operative's Strongboxes",
+          "aggregation": "sum",
+          "value": 3,
+          "unit": "strongboxes"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-barrels1",
+      "statId": "MapDeepwaterChartAdjacentBarrels1",
+      "familyId": "adjacent-barrels",
+      "familyName": "Clusters of Mysterious Barrels",
+      "tier": 1,
+      "tierLabel": "12-15",
+      "name": "12-15 Clusters of Mysterious Barrels",
+      "category": "Reward",
+      "summary": "Area contains (12-15) additional Clusters of Mysterious Barrels",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "barrels",
+      "effects": [
+        {
+          "id": "adjacent-barrels",
+          "scope": "connected",
+          "label": "Clusters of Mysterious Barrels",
+          "aggregation": "range",
+          "minimumValue": 12,
+          "maximumValue": 15,
+          "unit": "clusters"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-barrels2",
+      "statId": "MapDeepwaterChartAdjacentBarrels2",
+      "familyId": "adjacent-barrels",
+      "familyName": "Clusters of Mysterious Barrels",
+      "tier": 2,
+      "tierLabel": "16-20",
+      "name": "16-20 Clusters of Mysterious Barrels",
+      "category": "Reward",
+      "summary": "Area contains (16-20) additional Clusters of Mysterious Barrels",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "barrels",
+      "effects": [
+        {
+          "id": "adjacent-barrels",
+          "scope": "connected",
+          "label": "Clusters of Mysterious Barrels",
+          "aggregation": "range",
+          "minimumValue": 16,
+          "maximumValue": 20,
+          "unit": "clusters"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-starfish1",
+      "statId": "MapDeepwaterChartAdjacentStarfish1",
+      "familyId": "adjacent-starfish",
+      "familyName": "Giant Starfish",
+      "tier": 1,
+      "tierLabel": "4-5",
+      "name": "4-5 Giant Starfish",
+      "category": "Monster",
+      "summary": "Adjacent Areas contains (4-5) additional Giant Starfish",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "coral",
+      "icon": "starfish",
+      "effects": [
+        {
+          "id": "adjacent-starfish",
+          "scope": "connected",
+          "label": "Giant Starfish",
+          "aggregation": "range",
+          "minimumValue": 4,
+          "maximumValue": 5,
+          "unit": "starfish"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-starfish2",
+      "statId": "MapDeepwaterChartAdjacentStarfish2",
+      "familyId": "adjacent-starfish",
+      "familyName": "Giant Starfish",
+      "tier": 2,
+      "tierLabel": "6-7",
+      "name": "6-7 Giant Starfish",
+      "category": "Monster",
+      "summary": "Adjacent Areas contains (6-7) additional Giant Starfish",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "coral",
+      "icon": "starfish",
+      "effects": [
+        {
+          "id": "adjacent-starfish",
+          "scope": "connected",
+          "label": "Giant Starfish",
+          "aggregation": "range",
+          "minimumValue": 6,
+          "maximumValue": 7,
+          "unit": "starfish"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-golden-lanterns",
+      "statId": "MapDeepwaterChartAdjacentGoldenLanterns",
+      "familyId": "adjacent-golden-lanterns",
+      "familyName": "Golden Lanterns",
+      "tier": null,
+      "tierLabel": null,
+      "name": "4 Golden Lanterns",
+      "category": "Encounter",
+      "summary": "Adjacent Areas contain 4 additional Golden Lanterns",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "gold",
+      "icon": "gold",
+      "effects": [
+        {
+          "id": "adjacent-golden-lanterns",
+          "scope": "connected",
+          "label": "Golden Lanterns",
+          "aggregation": "sum",
+          "value": 4,
+          "unit": "lanterns"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-pantheon",
+      "statId": "MapDeepwaterChartAdjacentPantheon",
+      "familyId": "adjacent-pantheon",
+      "familyName": "Pantheon Modifiers",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Pantheon Modifiers",
+      "category": "Encounter",
+      "summary": "Rare Monsters in adjacent Areas will have a Pantheon Modifier",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "adjacent-pantheon",
+          "scope": "connected",
+          "label": "Pantheon Modifiers",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-unique-ring1",
+      "statId": "MapDeepwaterChartAdjacentUniqueRing1",
+      "familyId": "adjacent-unique-ring",
+      "familyName": "Unique Ring conversion chance",
+      "tier": 1,
+      "tierLabel": "10%",
+      "name": "10% Unique Ring conversion chance",
+      "category": "Reward",
+      "summary": "Rings dropped in adjacent Areas have 10% chance to instead drop as a Unique Ring",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "unique-ring",
+      "effects": [
+        {
+          "id": "adjacent-unique-ring",
+          "scope": "connected",
+          "label": "Unique Ring conversion chance",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-unique-ring2",
+      "statId": "MapDeepwaterChartAdjacentUniqueRing2",
+      "familyId": "adjacent-unique-ring",
+      "familyName": "Unique Ring conversion chance",
+      "tier": 2,
+      "tierLabel": "20%",
+      "name": "20% Unique Ring conversion chance",
+      "category": "Reward",
+      "summary": "Rings dropped in adjacent Areas have 20% chance to instead drop as a Unique Ring",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "unique-ring",
+      "effects": [
+        {
+          "id": "adjacent-unique-ring",
+          "scope": "connected",
+          "label": "Unique Ring conversion chance",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-unique-amulet1",
+      "statId": "MapDeepwaterChartAdjacentUniqueAmulet1",
+      "familyId": "adjacent-unique-amulet",
+      "familyName": "Unique Amulet conversion chance",
+      "tier": 1,
+      "tierLabel": "10%",
+      "name": "10% Unique Amulet conversion chance",
+      "category": "Reward",
+      "summary": "Amulets dropped in adjacent Areas have 10% chance to instead drop as a Unique Amulet",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "unique-amulet",
+      "effects": [
+        {
+          "id": "adjacent-unique-amulet",
+          "scope": "connected",
+          "label": "Unique Amulet conversion chance",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-unique-amulet2",
+      "statId": "MapDeepwaterChartAdjacentUniqueAmulet2",
+      "familyId": "adjacent-unique-amulet",
+      "familyName": "Unique Amulet conversion chance",
+      "tier": 2,
+      "tierLabel": "20%",
+      "name": "20% Unique Amulet conversion chance",
+      "category": "Reward",
+      "summary": "Amulets dropped in adjacent Areas have 20% chance to instead drop as a Unique Amulet",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "unique-amulet",
+      "effects": [
+        {
+          "id": "adjacent-unique-amulet",
+          "scope": "connected",
+          "label": "Unique Amulet conversion chance",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-unique-belt1",
+      "statId": "MapDeepwaterChartAdjacentUniqueBelt1",
+      "familyId": "adjacent-unique-belt",
+      "familyName": "Unique Belt conversion chance",
+      "tier": 1,
+      "tierLabel": "10%",
+      "name": "10% Unique Belt conversion chance",
+      "category": "Reward",
+      "summary": "Belts dropped in adjacent Areas have 10% chance to instead drop as a Unique Belt",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "unique-belt",
+      "effects": [
+        {
+          "id": "adjacent-unique-belt",
+          "scope": "connected",
+          "label": "Unique Belt conversion chance",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "adjacent-unique-belt2",
+      "statId": "MapDeepwaterChartAdjacentUniqueBelt2",
+      "familyId": "adjacent-unique-belt",
+      "familyName": "Unique Belt conversion chance",
+      "tier": 2,
+      "tierLabel": "20%",
+      "name": "20% Unique Belt conversion chance",
+      "category": "Reward",
+      "summary": "Belts dropped in adjacent Areas have 20% chance to instead drop as a Unique Belt",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "unique-belt",
+      "effects": [
+        {
+          "id": "adjacent-unique-belt",
+          "scope": "connected",
+          "label": "Unique Belt conversion chance",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-soul-eater",
+      "statId": "MapDeepwaterChartVoyageSoulEater",
+      "familyId": "voyage-soul-eater",
+      "familyName": "Soul Eater",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Soul Eater",
+      "category": "Monster",
+      "summary": "Players in Area have Soul Eater",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "voyage-soul-eater",
+          "scope": "voyage",
+          "label": "Soul Eater",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-pack-size1",
+      "statId": "MapDeepwaterChartVoyagePackSize1",
+      "familyId": "voyage-pack-size",
+      "familyName": "Increased Pack size",
+      "tier": 1,
+      "tierLabel": "5%",
+      "name": "5% Increased Pack size",
+      "category": "Monster",
+      "summary": "5% increased Pack size",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "pack-size",
+      "effects": [
+        {
+          "id": "voyage-pack-size",
+          "scope": "voyage",
+          "label": "Increased Pack size",
+          "aggregation": "per-area",
+          "value": 5,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-pack-size2",
+      "statId": "MapDeepwaterChartVoyagePackSize2",
+      "familyId": "voyage-pack-size",
+      "familyName": "Increased Pack size",
+      "tier": 2,
+      "tierLabel": "7%",
+      "name": "7% Increased Pack size",
+      "category": "Monster",
+      "summary": "7% increased Pack size",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "pack-size",
+      "effects": [
+        {
+          "id": "voyage-pack-size",
+          "scope": "voyage",
+          "label": "Increased Pack size",
+          "aggregation": "per-area",
+          "value": 7,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-quantity1",
+      "statId": "MapDeepwaterChartVoyageQuantity1",
+      "familyId": "voyage-quantity",
+      "familyName": "Increased Quantity of Items found",
+      "tier": 1,
+      "tierLabel": "8%",
+      "name": "8% Increased Quantity of Items found",
+      "category": "Reward",
+      "summary": "8% increased Quantity of Items found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "quantity",
+      "effects": [
+        {
+          "id": "voyage-quantity",
+          "scope": "voyage",
+          "label": "Increased Quantity of Items found",
+          "aggregation": "per-area",
+          "value": 8,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-quantity2",
+      "statId": "MapDeepwaterChartVoyageQuantity2",
+      "familyId": "voyage-quantity",
+      "familyName": "Increased Quantity of Items found",
+      "tier": 2,
+      "tierLabel": "10%",
+      "name": "10% Increased Quantity of Items found",
+      "category": "Reward",
+      "summary": "10% increased Quantity of Items found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "quantity",
+      "effects": [
+        {
+          "id": "voyage-quantity",
+          "scope": "voyage",
+          "label": "Increased Quantity of Items found",
+          "aggregation": "per-area",
+          "value": 10,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-rarity1",
+      "statId": "MapDeepwaterChartVoyageRarity1",
+      "familyId": "voyage-rarity",
+      "familyName": "Increased Rarity of Items found",
+      "tier": 1,
+      "tierLabel": "7%",
+      "name": "7% Increased Rarity of Items found",
+      "category": "Reward",
+      "summary": "7% increased Rarity of Items found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "violet",
+      "icon": "rarity",
+      "effects": [
+        {
+          "id": "voyage-rarity",
+          "scope": "voyage",
+          "label": "Increased Rarity of Items found",
+          "aggregation": "per-area",
+          "value": 7,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-rarity2",
+      "statId": "MapDeepwaterChartVoyageRarity2",
+      "familyId": "voyage-rarity",
+      "familyName": "Increased Rarity of Items found",
+      "tier": 2,
+      "tierLabel": "9%",
+      "name": "9% Increased Rarity of Items found",
+      "category": "Reward",
+      "summary": "9% increased Rarity of Items found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "violet",
+      "icon": "rarity",
+      "effects": [
+        {
+          "id": "voyage-rarity",
+          "scope": "voyage",
+          "label": "Increased Rarity of Items found",
+          "aggregation": "per-area",
+          "value": 9,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-friendly-jelly",
+      "statId": "MapDeepwaterChartVoyageFriendlyJelly",
+      "familyId": "voyage-friendly-jelly",
+      "familyName": "Friendly Jellyfish",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Friendly Jellyfish",
+      "category": "Encounter",
+      "summary": "Area contains Friendly Jellyfish. All Voyage Areas contain Friendly Jellyfish",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "teal",
+      "icon": "jellyfish",
+      "effects": [
+        {
+          "id": "voyage-friendly-jelly",
+          "scope": "voyage",
+          "label": "Friendly Jellyfish",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-resource-found1",
+      "statId": "MapDeepwaterChartVoyageResourceFound1",
+      "familyId": "voyage-resource-found",
+      "familyName": "Increased Dead Man's Sulphur found",
+      "tier": 1,
+      "tierLabel": "15%",
+      "name": "15% Increased Dead Man's Sulphur found",
+      "category": "Reward",
+      "summary": "15% increased Dead Man's Sulphur found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "sulphur",
+      "effects": [
+        {
+          "id": "voyage-resource-found",
+          "scope": "voyage",
+          "label": "Increased Dead Man's Sulphur found",
+          "aggregation": "per-area",
+          "value": 15,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-resource-found2",
+      "statId": "MapDeepwaterChartVoyageResourceFound2",
+      "familyId": "voyage-resource-found",
+      "familyName": "Increased Dead Man's Sulphur found",
+      "tier": 2,
+      "tierLabel": "20%",
+      "name": "20% Increased Dead Man's Sulphur found",
+      "category": "Reward",
+      "summary": "20% increased Dead Man's Sulphur found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "sulphur",
+      "effects": [
+        {
+          "id": "voyage-resource-found",
+          "scope": "voyage",
+          "label": "Increased Dead Man's Sulphur found",
+          "aggregation": "per-area",
+          "value": 20,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-resource-found3",
+      "statId": "MapDeepwaterChartVoyageResourceFound3",
+      "familyId": "voyage-resource-found",
+      "familyName": "Increased Dead Man's Sulphur found",
+      "tier": 3,
+      "tierLabel": "25%",
+      "name": "25% Increased Dead Man's Sulphur found",
+      "category": "Reward",
+      "summary": "25% increased Dead Man's Sulphur found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "sulphur",
+      "effects": [
+        {
+          "id": "voyage-resource-found",
+          "scope": "voyage",
+          "label": "Increased Dead Man's Sulphur found",
+          "aggregation": "per-area",
+          "value": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-increased-rare-monsters",
+      "statId": "MapDeepwaterChartVoyageIncreasedRareMonsters",
+      "familyId": "voyage-increased-rare-monsters",
+      "familyName": "Increased number of Rare Monsters",
+      "tier": null,
+      "tierLabel": null,
+      "name": "25% Increased number of Rare Monsters",
+      "category": "Monster",
+      "summary": "25% increased number of Rare Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "voyage-increased-rare-monsters",
+          "scope": "voyage",
+          "label": "Increased number of Rare Monsters",
+          "aggregation": "per-area",
+          "value": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-increased-magic-monsters",
+      "statId": "MapDeepwaterChartVoyageIncreasedMagicMonsters",
+      "familyId": "voyage-increased-magic-monsters",
+      "familyName": "Increased Magic Monsters",
+      "tier": null,
+      "tierLabel": null,
+      "name": "25% Increased Magic Monsters",
+      "category": "Monster",
+      "summary": "25% increased Magic Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "voyage-increased-magic-monsters",
+          "scope": "voyage",
+          "label": "Increased Magic Monsters",
+          "aggregation": "per-area",
+          "value": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "voyage-no-equipment-drops",
+      "statId": "MapDeepwaterChartVoyageNoEquipmentDrops",
+      "familyId": "voyage-no-equipment-drops",
+      "familyName": "No Equipment, Flask or Tincture drops",
+      "tier": null,
+      "tierLabel": null,
+      "name": "No Equipment, Flask or Tincture drops",
+      "category": "Monster",
+      "summary": "Monsters in all Voyage Areas cannot drop Equipment, Flasks or Tinctures",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "flask",
+      "effects": [
+        {
+          "id": "voyage-no-equipment-drops",
+          "scope": "voyage",
+          "label": "No Equipment, Flask or Tincture drops",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-minimum-magic-monsters",
+      "statId": "MapDeepwaterChartVoyageMinimumMagicMonsters",
+      "familyId": "voyage-minimum-magic-monsters",
+      "familyName": "Monsters are at least Magic",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Monsters are at least Magic",
+      "category": "Monster",
+      "summary": "Monsters in Area are at least Magic",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "voyage-minimum-magic-monsters",
+          "scope": "voyage",
+          "label": "Monsters are at least Magic",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-monsters-possessed",
+      "statId": "MapDeepwaterChartVoyageMonstersPossessed",
+      "familyId": "voyage-monsters-possessed",
+      "familyName": "Possessed Rare Monsters",
+      "tier": null,
+      "tierLabel": null,
+      "name": "100% Possessed Rare Monsters",
+      "category": "Monster",
+      "summary": "100% chance for Rare Monsters in Area to be Possessed",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "rare-monster",
+      "effects": [
+        {
+          "id": "voyage-monsters-possessed",
+          "scope": "voyage",
+          "label": "Possessed Rare Monsters",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-monsters-essenced",
+      "statId": "MapDeepwaterChartVoyageMonstersEssenced",
+      "familyId": "voyage-monsters-essenced",
+      "familyName": "Essenced natural inhabitants",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Essenced natural inhabitants",
+      "category": "Encounter",
+      "summary": "Rare monsters that are natural inhabitants are imprisoned by Essences",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "violet",
+      "icon": "essence",
+      "effects": [
+        {
+          "id": "voyage-monsters-essenced",
+          "scope": "voyage",
+          "label": "Essenced natural inhabitants",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-rare-fracture",
+      "statId": "MapDeepwaterChartVoyageRareFracture",
+      "familyId": "voyage-rare-fracture",
+      "familyName": "Rare Monsters Fracture on death",
+      "tier": null,
+      "tierLabel": null,
+      "name": "50% Rare Monsters Fracture on death",
+      "category": "Monster",
+      "summary": "50% chance for Rare Monsters to Fracture on death",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "coral",
+      "icon": "corruption",
+      "effects": [
+        {
+          "id": "voyage-rare-fracture",
+          "scope": "voyage",
+          "label": "Rare Monsters Fracture on death",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "voyage-flask-quality",
+      "statId": "MapDeepwaterChartVoyageFlaskQuality",
+      "familyId": "voyage-flask-quality",
+      "familyName": "Flasks have 20% Quality",
+      "tier": null,
+      "tierLabel": null,
+      "name": "100% Flasks have 20% Quality",
+      "category": "Reward",
+      "summary": "Flasks found in all Voyage Areas have 100% chance to have 20% Quality",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "scopeConfidence": "datamined",
+      "accent": "emerald",
+      "icon": "flask",
+      "effects": [
+        {
+          "id": "voyage-flask-quality",
+          "scope": "voyage",
+          "label": "Flasks have 20% Quality",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "self-kalguuran-shipment",
+      "familyId": "self-kalguuran-shipment",
+      "familyName": "Lost Kalguuran Shipment",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Lost Kalguuran Shipment",
+      "category": "Destination",
+      "summary": "Leads to a lost Kalguuran shipment beneath the sea.",
+      "confidence": "official-preview",
+      "scopeConfidence": "confirmed",
+      "sourceUrl": "https://www.pathofexile.com/forum/view-thread/3985355",
+      "verifiedAt": "2026-07-23",
+      "accent": "cobalt",
+      "icon": "kalguuran-shipment",
+      "effects": [
+        {
+          "id": "kalguuran-shipment",
+          "scope": "self",
+          "label": "Lost Kalguuran shipment",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "self-sunken-abyss",
+      "familyId": "self-sunken-abyss",
+      "familyName": "Sunken Abyssal Pit",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Sunken Abyssal Pit",
+      "category": "Destination",
+      "summary": "Leads to a sunken Abyssal pit in this area.",
+      "confidence": "official-preview",
+      "scopeConfidence": "confirmed",
+      "sourceUrl": "https://www.pathofexile.com/forum/view-thread/3985355",
+      "verifiedAt": "2026-07-23",
+      "accent": "crimson",
+      "icon": "abyss",
+      "effects": [
+        {
+          "id": "sunken-abyss",
+          "scope": "self",
+          "label": "Sunken Abyssal pit",
+          "aggregation": "descriptive"
+        }
+      ]
+    }
+  ],
+  "borderModifiers": [
+    {
+      "id": "pack-size1",
+      "statId": "DeepwaterBorderPackSize1",
+      "familyId": "pack-size",
+      "familyName": "Increased Pack size",
+      "tier": 1,
+      "tierLabel": "16%",
+      "name": "16% Increased Pack size",
+      "summary": "16% increased Pack size",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "pack-size",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "pack-size",
+          "scope": "border",
+          "label": "Increased Pack size",
+          "aggregation": "per-area",
+          "value": 16,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "pack-size2",
+      "statId": "DeepwaterBorderPackSize2",
+      "familyId": "pack-size",
+      "familyName": "Increased Pack size",
+      "tier": 2,
+      "tierLabel": "24%",
+      "name": "24% Increased Pack size",
+      "summary": "24% increased Pack size",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "pack-size",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "pack-size",
+          "scope": "border",
+          "label": "Increased Pack size",
+          "aggregation": "per-area",
+          "value": 24,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "pack-size3",
+      "statId": "DeepwaterBorderPackSize3",
+      "familyId": "pack-size",
+      "familyName": "Increased Pack size",
+      "tier": 3,
+      "tierLabel": "32%",
+      "name": "32% Increased Pack size",
+      "summary": "32% increased Pack size",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "pack-size",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "pack-size",
+          "scope": "border",
+          "label": "Increased Pack size",
+          "aggregation": "per-area",
+          "value": 32,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "monsters-at-least-magic",
+      "statId": "DeepwaterBorderMonstersAtLeastMagic",
+      "familyId": "monsters-at-least-magic",
+      "familyName": "Monsters are at least Magic",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Monsters are at least Magic",
+      "summary": "Monsters in Area are at least Magic",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "monsters-at-least-magic",
+          "scope": "border",
+          "label": "Monsters are at least Magic",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "increased-rare-monsters1",
+      "statId": "DeepwaterBorderIncreasedRareMonsters1",
+      "familyId": "increased-rare-monsters",
+      "familyName": "Increased number of Rare Monsters",
+      "tier": 1,
+      "tierLabel": "50%",
+      "name": "50% Increased number of Rare Monsters",
+      "summary": "50% increased number of Rare Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "increased-rare-monsters",
+          "scope": "border",
+          "label": "Increased number of Rare Monsters",
+          "aggregation": "per-area",
+          "value": 50,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "increased-rare-monsters2",
+      "statId": "DeepwaterBorderIncreasedRareMonsters2",
+      "familyId": "increased-rare-monsters",
+      "familyName": "Increased number of Rare Monsters",
+      "tier": 2,
+      "tierLabel": "75%",
+      "name": "75% Increased number of Rare Monsters",
+      "summary": "75% increased number of Rare Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "increased-rare-monsters",
+          "scope": "border",
+          "label": "Increased number of Rare Monsters",
+          "aggregation": "per-area",
+          "value": 75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "increased-rare-monsters3",
+      "statId": "DeepwaterBorderIncreasedRareMonsters3",
+      "familyId": "increased-rare-monsters",
+      "familyName": "Increased number of Rare Monsters",
+      "tier": 3,
+      "tierLabel": "100%",
+      "name": "100% Increased number of Rare Monsters",
+      "summary": "100% increased number of Rare Monsters",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "increased-rare-monsters",
+          "scope": "border",
+          "label": "Increased number of Rare Monsters",
+          "aggregation": "per-area",
+          "value": 100,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "additional-sea-beasts1",
+      "statId": "DeepwaterBorderAdditionalSeaBeasts1",
+      "familyId": "additional-sea-beasts",
+      "familyName": "Additional Sea Beast packs",
+      "tier": 1,
+      "tierLabel": "8",
+      "name": "8 Additional Sea Beast packs",
+      "summary": "Area contains 8 additional packs of Sea Beasts",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "fish",
+      "ornament": "starfish",
+      "effects": [
+        {
+          "id": "additional-sea-beasts",
+          "scope": "border",
+          "label": "Additional Sea Beast packs",
+          "aggregation": "sum",
+          "value": 8,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-sea-beasts2",
+      "statId": "DeepwaterBorderAdditionalSeaBeasts2",
+      "familyId": "additional-sea-beasts",
+      "familyName": "Additional Sea Beast packs",
+      "tier": 2,
+      "tierLabel": "12",
+      "name": "12 Additional Sea Beast packs",
+      "summary": "Area contains 12 additional packs of Sea Beasts",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "fish",
+      "ornament": "starfish",
+      "effects": [
+        {
+          "id": "additional-sea-beasts",
+          "scope": "border",
+          "label": "Additional Sea Beast packs",
+          "aggregation": "sum",
+          "value": 12,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-sea-beasts3",
+      "statId": "DeepwaterBorderAdditionalSeaBeasts3",
+      "familyId": "additional-sea-beasts",
+      "familyName": "Additional Sea Beast packs",
+      "tier": 3,
+      "tierLabel": "16",
+      "name": "16 Additional Sea Beast packs",
+      "summary": "Area contains 16 additional packs of Sea Beasts",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "fish",
+      "ornament": "starfish",
+      "effects": [
+        {
+          "id": "additional-sea-beasts",
+          "scope": "border",
+          "label": "Additional Sea Beast packs",
+          "aggregation": "sum",
+          "value": 16,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-crabs1",
+      "statId": "DeepwaterBorderAdditionalCrabs1",
+      "familyId": "additional-crabs",
+      "familyName": "Additional Crab packs",
+      "tier": 1,
+      "tierLabel": "8",
+      "name": "8 Additional Crab packs",
+      "summary": "Area contains 8 additional packs of Crabs",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "crab",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "additional-crabs",
+          "scope": "border",
+          "label": "Additional Crab packs",
+          "aggregation": "sum",
+          "value": 8,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-crabs2",
+      "statId": "DeepwaterBorderAdditionalCrabs2",
+      "familyId": "additional-crabs",
+      "familyName": "Additional Crab packs",
+      "tier": 2,
+      "tierLabel": "12",
+      "name": "12 Additional Crab packs",
+      "summary": "Area contains 12 additional packs of Crabs",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "crab",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "additional-crabs",
+          "scope": "border",
+          "label": "Additional Crab packs",
+          "aggregation": "sum",
+          "value": 12,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-crabs3",
+      "statId": "DeepwaterBorderAdditionalCrabs3",
+      "familyId": "additional-crabs",
+      "familyName": "Additional Crab packs",
+      "tier": 3,
+      "tierLabel": "16",
+      "name": "16 Additional Crab packs",
+      "summary": "Area contains 16 additional packs of Crabs",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "crab",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "additional-crabs",
+          "scope": "border",
+          "label": "Additional Crab packs",
+          "aggregation": "sum",
+          "value": 16,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-drowned1",
+      "statId": "DeepwaterBorderAdditionalDrowned1",
+      "familyId": "additional-drowned",
+      "familyName": "Additional Drowned packs",
+      "tier": 1,
+      "tierLabel": "8",
+      "name": "8 Additional Drowned packs",
+      "summary": "Area contains 8 additional packs of Drowned",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "additional-drowned",
+          "scope": "border",
+          "label": "Additional Drowned packs",
+          "aggregation": "sum",
+          "value": 8,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-drowned2",
+      "statId": "DeepwaterBorderAdditionalDrowned2",
+      "familyId": "additional-drowned",
+      "familyName": "Additional Drowned packs",
+      "tier": 2,
+      "tierLabel": "12",
+      "name": "12 Additional Drowned packs",
+      "summary": "Area contains 12 additional packs of Drowned",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "additional-drowned",
+          "scope": "border",
+          "label": "Additional Drowned packs",
+          "aggregation": "sum",
+          "value": 12,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "additional-drowned3",
+      "statId": "DeepwaterBorderAdditionalDrowned3",
+      "familyId": "additional-drowned",
+      "familyName": "Additional Drowned packs",
+      "tier": 3,
+      "tierLabel": "16",
+      "name": "16 Additional Drowned packs",
+      "summary": "Area contains 16 additional packs of Drowned",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "additional-drowned",
+          "scope": "border",
+          "label": "Additional Drowned packs",
+          "aggregation": "sum",
+          "value": 16,
+          "unit": "packs"
+        }
+      ]
+    },
+    {
+      "id": "chart-effect1",
+      "statId": "DeepwaterBorderChartEffect1",
+      "familyId": "chart-effect",
+      "familyName": "Explicit modifier magnitudes",
+      "tier": 1,
+      "tierLabel": "40%",
+      "name": "40% Explicit modifier magnitudes",
+      "summary": "Adjacent Areas have 40% increased explicit modifier magnitudes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "generic",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "chart-effect",
+          "scope": "border",
+          "label": "Explicit modifier magnitudes",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "chart-effect2",
+      "statId": "DeepwaterBorderChartEffect2",
+      "familyId": "chart-effect",
+      "familyName": "Explicit modifier magnitudes",
+      "tier": 2,
+      "tierLabel": "60%",
+      "name": "60% Explicit modifier magnitudes",
+      "summary": "Adjacent Areas have 60% increased explicit modifier magnitudes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "generic",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "chart-effect",
+          "scope": "border",
+          "label": "Explicit modifier magnitudes",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "chart-effect3",
+      "statId": "DeepwaterBorderChartEffect3",
+      "familyId": "chart-effect",
+      "familyName": "Explicit modifier magnitudes",
+      "tier": 3,
+      "tierLabel": "80%",
+      "name": "80% Explicit modifier magnitudes",
+      "summary": "Adjacent Areas have 80% increased explicit modifier magnitudes",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "generic",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "chart-effect",
+          "scope": "border",
+          "label": "Explicit modifier magnitudes",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "chance-to-not-consume-chart1",
+      "statId": "DeepwaterBorderChanceToNotConsumeChart1",
+      "familyId": "chance-to-not-consume-chart",
+      "familyName": "Chance to preserve adjacent Charts",
+      "tier": 1,
+      "tierLabel": "30%",
+      "name": "30% Chance to preserve adjacent Charts",
+      "summary": "Adjacent Charts have 30% chance to not be consumed when beginning a Voyage",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "generic",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "chance-to-not-consume-chart",
+          "scope": "border",
+          "label": "Chance to preserve adjacent Charts",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "chance-to-not-consume-chart2",
+      "statId": "DeepwaterBorderChanceToNotConsumeChart2",
+      "familyId": "chance-to-not-consume-chart",
+      "familyName": "Chance to preserve adjacent Charts",
+      "tier": 2,
+      "tierLabel": "50%",
+      "name": "50% Chance to preserve adjacent Charts",
+      "summary": "Adjacent Charts have 50% chance to not be consumed when beginning a Voyage",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "generic",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "chance-to-not-consume-chart",
+          "scope": "border",
+          "label": "Chance to preserve adjacent Charts",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "giant-octopus",
+      "statId": "DeepwaterBorderGiantOctopus",
+      "familyId": "giant-octopus",
+      "familyName": "Filthscrabble",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Filthscrabble",
+      "summary": "Area contains Filthscrabble",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "octopus",
+      "ornament": "starfish",
+      "effects": [
+        {
+          "id": "giant-octopus",
+          "scope": "border",
+          "label": "Filthscrabble",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "infinite-lanterns",
+      "statId": "DeepwaterBorderInfiniteLanterns",
+      "familyId": "infinite-lanterns",
+      "familyName": "Lantern count preserved",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Lantern count preserved",
+      "summary": "Placing Lanterns does not reduce your Lantern count in adjacent Areas",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "lantern",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "infinite-lanterns",
+          "scope": "border",
+          "label": "Lantern count preserved",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-ancient",
+      "statId": "DeepwaterBorderRareMonsterAncient",
+      "familyId": "rare-monster-ancient",
+      "familyName": "Additional Ancient Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Ancient Orb",
+      "summary": "Rare Monsters in Area drop an additional Ancient Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "ancient-orb",
+      "ornament": "ancient-orb",
+      "effects": [
+        {
+          "id": "rare-monster-ancient",
+          "scope": "border",
+          "label": "Additional Ancient Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-divine",
+      "statId": "DeepwaterBorderRareMonsterDivine",
+      "familyId": "rare-monster-divine",
+      "familyName": "Additional Divine Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Divine Orb",
+      "summary": "Rare Monsters in Area drop an additional Divine Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "divine-orb",
+      "ornament": "divine-orb",
+      "effects": [
+        {
+          "id": "rare-monster-divine",
+          "scope": "border",
+          "label": "Additional Divine Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-exalted",
+      "statId": "DeepwaterBorderRareMonsterExalted",
+      "familyId": "rare-monster-exalted",
+      "familyName": "Additional Exalted Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Exalted Orb",
+      "summary": "Rare Monsters in Area drop an additional Exalted Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "exalted-orb",
+      "ornament": "exalted-orb",
+      "effects": [
+        {
+          "id": "rare-monster-exalted",
+          "scope": "border",
+          "label": "Additional Exalted Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-annulment",
+      "statId": "DeepwaterBorderRareMonsterAnnulment",
+      "familyId": "rare-monster-annulment",
+      "familyName": "Additional Annulment Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Annulment Orb",
+      "summary": "Rare Monsters in Area drop an additional Annulment Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "annulment-orb",
+      "ornament": "annulment-orb",
+      "effects": [
+        {
+          "id": "rare-monster-annulment",
+          "scope": "border",
+          "label": "Additional Annulment Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-chaos",
+      "statId": "DeepwaterBorderRareMonsterChaos",
+      "familyId": "rare-monster-chaos",
+      "familyName": "Additional Chaos Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Chaos Orb",
+      "summary": "Rare Monsters in Area drop an additional Chaos Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "chaos-orb",
+      "ornament": "chaos-orb",
+      "effects": [
+        {
+          "id": "rare-monster-chaos",
+          "scope": "border",
+          "label": "Additional Chaos Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-vaal",
+      "statId": "DeepwaterBorderRareMonsterVaal",
+      "familyId": "rare-monster-vaal",
+      "familyName": "Additional Vaal Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Vaal Orb",
+      "summary": "Rare Monsters in Area drop an additional Vaal Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "vaal-orb",
+      "ornament": "vaal-orb",
+      "effects": [
+        {
+          "id": "rare-monster-vaal",
+          "scope": "border",
+          "label": "Additional Vaal Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-gemcutters",
+      "statId": "DeepwaterBorderRareMonsterGemcutters",
+      "familyId": "rare-monster-gemcutters",
+      "familyName": "Additional Gemcutter's Prism",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Gemcutter's Prism",
+      "summary": "Rare Monsters in Area drop an additional Gemcutter's Prism",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "gemcutters-prism",
+      "ornament": "gemcutters-prism",
+      "effects": [
+        {
+          "id": "rare-monster-gemcutters",
+          "scope": "border",
+          "label": "Additional Gemcutter's Prism",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-chromatic",
+      "statId": "DeepwaterBorderRareMonsterChromatic",
+      "familyId": "rare-monster-chromatic",
+      "familyName": "Additional Chromatic Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Chromatic Orb",
+      "summary": "Rare Monsters in Area drop an additional Chromatic Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "chromatic-orb",
+      "ornament": "chromatic-orb",
+      "effects": [
+        {
+          "id": "rare-monster-chromatic",
+          "scope": "border",
+          "label": "Additional Chromatic Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-regret",
+      "statId": "DeepwaterBorderRareMonsterRegret",
+      "familyId": "rare-monster-regret",
+      "familyName": "Additional Orb of Regret",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Orb of Regret",
+      "summary": "Rare Monsters in Area drop an additional Orb of Regret",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "orb-of-regret",
+      "ornament": "orb-of-regret",
+      "effects": [
+        {
+          "id": "rare-monster-regret",
+          "scope": "border",
+          "label": "Additional Orb of Regret",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-blessed",
+      "statId": "DeepwaterBorderRareMonsterBlessed",
+      "familyId": "rare-monster-blessed",
+      "familyName": "Additional Blessed Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Blessed Orb",
+      "summary": "Rare Monsters in Area drop an additional Blessed Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "blessed-orb",
+      "ornament": "blessed-orb",
+      "effects": [
+        {
+          "id": "rare-monster-blessed",
+          "scope": "border",
+          "label": "Additional Blessed Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-regal",
+      "statId": "DeepwaterBorderRareMonsterRegal",
+      "familyId": "rare-monster-regal",
+      "familyName": "Additional Regal Orb",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Additional Regal Orb",
+      "summary": "Rare Monsters in Area drop an additional Regal Orb",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "regal-orb",
+      "ornament": "regal-orb",
+      "effects": [
+        {
+          "id": "rare-monster-regal",
+          "scope": "border",
+          "label": "Additional Regal Orb",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-support",
+      "statId": "DeepwaterBorderRareMonsterSupport",
+      "familyId": "rare-monster-support",
+      "familyName": "Support Gem drop chance",
+      "tier": null,
+      "tierLabel": null,
+      "name": "20% Support Gem drop chance",
+      "summary": "Rare Monsters in Area have 20% chance to drop a Support Gem",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "rare-monster-support",
+          "scope": "border",
+          "label": "Support Gem drop chance",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "random-ducat-chest",
+      "statId": "DeepwaterBorderRandomDucatChest",
+      "familyId": "random-ducat-chest",
+      "familyName": "Pirate's Locker",
+      "tier": null,
+      "tierLabel": null,
+      "name": "1 Pirate's Locker",
+      "summary": "Area contains an additional Pirate's Locker",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "strongbox",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "random-ducat-chest",
+          "scope": "border",
+          "label": "Pirate's Locker",
+          "aggregation": "sum",
+          "value": 1,
+          "unit": "instances"
+        }
+      ]
+    },
+    {
+      "id": "pirate-pack",
+      "statId": "DeepwaterBorderPiratePack",
+      "familyId": "pirate-pack",
+      "familyName": "Brinerot Raiding Party",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Brinerot Raiding Party",
+      "summary": "Area contains a Brinerot Raiding Party",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "pirate-pack",
+          "scope": "border",
+          "label": "Brinerot Raiding Party",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monsters-per-connection1",
+      "statId": "DeepwaterBorderRareMonstersPerConnection1",
+      "familyId": "rare-monsters-per-connection",
+      "familyName": "Rare Monsters per Chart connection",
+      "tier": 1,
+      "tierLabel": "50%",
+      "name": "50% Rare Monsters per Chart connection",
+      "summary": "50% increased number of Rare monsters in Area per Chart connection",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "rare-monsters-per-connection",
+          "scope": "border",
+          "label": "Rare Monsters per Chart connection",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monsters-per-connection2",
+      "statId": "DeepwaterBorderRareMonstersPerConnection2",
+      "familyId": "rare-monsters-per-connection",
+      "familyName": "Rare Monsters per Chart connection",
+      "tier": 2,
+      "tierLabel": "75%",
+      "name": "75% Rare Monsters per Chart connection",
+      "summary": "75% increased number of Rare monsters in Area per Chart connection",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "rare-monsters-per-connection",
+          "scope": "border",
+          "label": "Rare Monsters per Chart connection",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "quantity-per-connection1",
+      "statId": "DeepwaterBorderQuantityPerConnection1",
+      "familyId": "quantity-per-connection",
+      "familyName": "Quantity per Chart connection",
+      "tier": 1,
+      "tierLabel": "120%",
+      "name": "120% Quantity, -50% per connection",
+      "summary": "50% reduced quantity of items found in Areas per Chart connection. 120% increased Quantity of Items found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "quantity",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "quantity-per-connection",
+          "scope": "border",
+          "label": "Quantity per Chart connection",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "quantity-per-connection2",
+      "statId": "DeepwaterBorderQuantityPerConnection2",
+      "familyId": "quantity-per-connection",
+      "familyName": "Quantity per Chart connection",
+      "tier": 2,
+      "tierLabel": "180%",
+      "name": "180% Quantity, -50% per connection",
+      "summary": "50% reduced quantity of items found in Areas per Chart connection. 180% increased Quantity of Items found in this Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "quantity",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "quantity-per-connection",
+          "scope": "border",
+          "label": "Quantity per Chart connection",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "equipment-to-gold1",
+      "statId": "DeepwaterBorderEquipmentToGold1",
+      "familyId": "equipment-to-gold",
+      "familyName": "Equipment converted to Gold",
+      "tier": 1,
+      "tierLabel": "25%",
+      "name": "25% Equipment converted to Gold",
+      "summary": "25% of Equipment dropped by Monsters in Area is converted to Gold",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "gold",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "equipment-to-gold",
+          "scope": "border",
+          "label": "Equipment converted to Gold",
+          "aggregation": "per-area",
+          "value": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "equipment-to-gold2",
+      "statId": "DeepwaterBorderEquipmentToGold2",
+      "familyId": "equipment-to-gold",
+      "familyName": "Equipment converted to Gold",
+      "tier": 2,
+      "tierLabel": "50%",
+      "name": "50% Equipment converted to Gold",
+      "summary": "50% of Equipment dropped by Monsters in Area is converted to Gold",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "gold",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "equipment-to-gold",
+          "scope": "border",
+          "label": "Equipment converted to Gold",
+          "aggregation": "per-area",
+          "value": 50,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "currency-to-stacked-decks",
+      "statId": "DeepwaterBorderCurrencyToStackedDecks",
+      "familyId": "currency-to-stacked-decks",
+      "familyName": "Basic Currency converted to Stacked Decks",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Basic Currency converted to Stacked Decks",
+      "summary": "Basic Currency items dropped by Monsters in Area will instead drop as Stacked Decks",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "stacked-deck",
+      "ornament": "stacked-deck",
+      "effects": [
+        {
+          "id": "currency-to-stacked-decks",
+          "scope": "border",
+          "label": "Basic Currency converted to Stacked Decks",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "rare-monster-scarab",
+      "statId": "DeepwaterBorderRareMonsterScarab",
+      "familyId": "rare-monster-scarab",
+      "familyName": "Rare Monsters in Area drop an additional Scarab",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Rare Monsters in Area drop an additional Scarab",
+      "summary": "Rare Monsters in Area drop an additional Scarab",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "rare-monster-scarab",
+          "scope": "border",
+          "label": "Rare Monsters in Area drop an additional Scarab",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "more-currency1",
+      "statId": "DeepwaterBorderMoreCurrency1",
+      "familyId": "more-currency",
+      "familyName": "More Currency found",
+      "tier": 1,
+      "tierLabel": "50%",
+      "name": "50% More Currency found",
+      "summary": "50% more Currency found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "chaos-orb",
+      "ornament": "chaos-orb",
+      "effects": [
+        {
+          "id": "more-currency",
+          "scope": "border",
+          "label": "More Currency found",
+          "aggregation": "per-area",
+          "value": 50,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-currency2",
+      "statId": "DeepwaterBorderMoreCurrency2",
+      "familyId": "more-currency",
+      "familyName": "More Currency found",
+      "tier": 2,
+      "tierLabel": "75%",
+      "name": "75% More Currency found",
+      "summary": "75% more Currency found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "chaos-orb",
+      "ornament": "chaos-orb",
+      "effects": [
+        {
+          "id": "more-currency",
+          "scope": "border",
+          "label": "More Currency found",
+          "aggregation": "per-area",
+          "value": 75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-currency3",
+      "statId": "DeepwaterBorderMoreCurrency3",
+      "familyId": "more-currency",
+      "familyName": "More Currency found",
+      "tier": 3,
+      "tierLabel": "100%",
+      "name": "100% More Currency found",
+      "summary": "100% more Currency found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "chaos-orb",
+      "ornament": "chaos-orb",
+      "effects": [
+        {
+          "id": "more-currency",
+          "scope": "border",
+          "label": "More Currency found",
+          "aggregation": "per-area",
+          "value": 100,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-scarabs1",
+      "statId": "DeepwaterBorderMoreScarabs1",
+      "familyId": "more-scarabs",
+      "familyName": "More Scarabs found",
+      "tier": 1,
+      "tierLabel": "50%",
+      "name": "50% More Scarabs found",
+      "summary": "50% more Scarabs found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "scarab",
+      "ornament": "scarab",
+      "effects": [
+        {
+          "id": "more-scarabs",
+          "scope": "border",
+          "label": "More Scarabs found",
+          "aggregation": "per-area",
+          "value": 50,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-scarabs2",
+      "statId": "DeepwaterBorderMoreScarabs2",
+      "familyId": "more-scarabs",
+      "familyName": "More Scarabs found",
+      "tier": 2,
+      "tierLabel": "75%",
+      "name": "75% More Scarabs found",
+      "summary": "75% more Scarabs found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "scarab",
+      "ornament": "scarab",
+      "effects": [
+        {
+          "id": "more-scarabs",
+          "scope": "border",
+          "label": "More Scarabs found",
+          "aggregation": "per-area",
+          "value": 75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-scarabs3",
+      "statId": "DeepwaterBorderMoreScarabs3",
+      "familyId": "more-scarabs",
+      "familyName": "More Scarabs found",
+      "tier": 3,
+      "tierLabel": "100%",
+      "name": "100% More Scarabs found",
+      "summary": "100% more Scarabs found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "scarab",
+      "ornament": "scarab",
+      "effects": [
+        {
+          "id": "more-scarabs",
+          "scope": "border",
+          "label": "More Scarabs found",
+          "aggregation": "per-area",
+          "value": 100,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-rarity1",
+      "statId": "DeepwaterBorderMoreRarity1",
+      "familyId": "more-rarity",
+      "familyName": "More Item Rarity",
+      "tier": 1,
+      "tierLabel": "50%",
+      "name": "50% More Item Rarity",
+      "summary": "50% more Rarity of Items found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rarity",
+      "ornament": "coral",
+      "effects": [
+        {
+          "id": "more-rarity",
+          "scope": "border",
+          "label": "More Item Rarity",
+          "aggregation": "per-area",
+          "value": 50,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-rarity2",
+      "statId": "DeepwaterBorderMoreRarity2",
+      "familyId": "more-rarity",
+      "familyName": "More Item Rarity",
+      "tier": 2,
+      "tierLabel": "75%",
+      "name": "75% More Item Rarity",
+      "summary": "75% more Rarity of Items found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rarity",
+      "ornament": "coral",
+      "effects": [
+        {
+          "id": "more-rarity",
+          "scope": "border",
+          "label": "More Item Rarity",
+          "aggregation": "per-area",
+          "value": 75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "more-rarity3",
+      "statId": "DeepwaterBorderMoreRarity3",
+      "familyId": "more-rarity",
+      "familyName": "More Item Rarity",
+      "tier": 3,
+      "tierLabel": "100%",
+      "name": "100% More Item Rarity",
+      "summary": "100% more Rarity of Items found in Area",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rarity",
+      "ornament": "coral",
+      "effects": [
+        {
+          "id": "more-rarity",
+          "scope": "border",
+          "label": "More Item Rarity",
+          "aggregation": "per-area",
+          "value": 100,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "crab-miniboss",
+      "statId": "DeepwaterBorderCrabMiniboss",
+      "familyId": "crab-miniboss",
+      "familyName": "Captainsbane",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Captainsbane",
+      "summary": "Adjacent Areas contain Captainsbane",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "crab",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "crab-miniboss",
+          "scope": "border",
+          "label": "Captainsbane",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "exp-gain1",
+      "statId": "DeepwaterBorderExpGain1",
+      "familyId": "exp-gain",
+      "familyName": "Increased Experience gain",
+      "tier": 1,
+      "tierLabel": "100%",
+      "name": "100% Increased Experience gain",
+      "summary": "100% increased Experience gain",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "experience",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "exp-gain",
+          "scope": "border",
+          "label": "Increased Experience gain",
+          "aggregation": "per-area",
+          "value": 100,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "exp-gain2",
+      "statId": "DeepwaterBorderExpGain2",
+      "familyId": "exp-gain",
+      "familyName": "Increased Experience gain",
+      "tier": 2,
+      "tierLabel": "150%",
+      "name": "150% Increased Experience gain",
+      "summary": "150% increased Experience gain",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "experience",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "exp-gain",
+          "scope": "border",
+          "label": "Increased Experience gain",
+          "aggregation": "per-area",
+          "value": 150,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "exp-gain3",
+      "statId": "DeepwaterBorderExpGain3",
+      "familyId": "exp-gain",
+      "familyName": "Increased Experience gain",
+      "tier": 3,
+      "tierLabel": "200%",
+      "name": "200% Increased Experience gain",
+      "summary": "200% increased Experience gain",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "experience",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "exp-gain",
+          "scope": "border",
+          "label": "Increased Experience gain",
+          "aggregation": "per-area",
+          "value": 200,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "magic-monster-mods1",
+      "statId": "DeepwaterBorderMagicMonsterMods1",
+      "familyId": "magic-monster-mods",
+      "familyName": "Additional Magic Monster modifiers",
+      "tier": 1,
+      "tierLabel": "1",
+      "name": "1 Additional Magic Monster modifier",
+      "summary": "Magic Monsters in adjacent Areas have an additional modifier",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "magic-monster-mods",
+          "scope": "border",
+          "label": "Additional Magic Monster modifiers",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "magic-monster-mods2",
+      "statId": "DeepwaterBorderMagicMonsterMods2",
+      "familyId": "magic-monster-mods",
+      "familyName": "Additional Magic Monster modifiers",
+      "tier": 2,
+      "tierLabel": "2",
+      "name": "2 Additional Magic Monster modifiers",
+      "summary": "Magic Monsters in adjacent Areas have 2 additional modifiers",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "rare-monster",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "magic-monster-mods",
+          "scope": "border",
+          "label": "Additional Magic Monster modifiers",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "treasure-anchors1",
+      "statId": "DeepwaterBorderTreasureAnchors1",
+      "familyId": "treasure-anchors",
+      "familyName": "Treasure Anchors",
+      "tier": 1,
+      "tierLabel": "2",
+      "name": "2 Treasure Anchors",
+      "summary": "Adjacent Areas contain 2 additional Treasure Anchors",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "anchor",
+      "ornament": "anchor",
+      "effects": [
+        {
+          "id": "treasure-anchors",
+          "scope": "border",
+          "label": "Treasure Anchors",
+          "aggregation": "sum",
+          "value": 2,
+          "unit": "anchors"
+        }
+      ]
+    },
+    {
+      "id": "treasure-anchors2",
+      "statId": "DeepwaterBorderTreasureAnchors2",
+      "familyId": "treasure-anchors",
+      "familyName": "Treasure Anchors",
+      "tier": 2,
+      "tierLabel": "4",
+      "name": "4 Treasure Anchors",
+      "summary": "Adjacent Areas contain 4 additional Treasure Anchors",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "anchor",
+      "ornament": "anchor",
+      "effects": [
+        {
+          "id": "treasure-anchors",
+          "scope": "border",
+          "label": "Treasure Anchors",
+          "aggregation": "sum",
+          "value": 4,
+          "unit": "anchors"
+        }
+      ]
+    },
+    {
+      "id": "sulphur-drops",
+      "statId": "DeepwaterBorderSulphurDrops",
+      "familyId": "sulphur-drops",
+      "familyName": "Dead Man's Sulphur from Rare Monsters",
+      "tier": null,
+      "tierLabel": null,
+      "name": "Dead Man's Sulphur from Rare Monsters",
+      "summary": "Rare Monsters in adjacent Areas drop Dead Man's Sulphur",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "sulphur",
+      "ornament": "shell",
+      "effects": [
+        {
+          "id": "sulphur-drops",
+          "scope": "border",
+          "label": "Dead Man's Sulphur from Rare Monsters",
+          "aggregation": "descriptive"
+        }
+      ]
+    },
+    {
+      "id": "golden-lanterns",
+      "statId": "DeepwaterBorderGoldenLanterns",
+      "familyId": "golden-lanterns",
+      "familyName": "Golden Lanterns",
+      "tier": null,
+      "tierLabel": null,
+      "name": "4 Golden Lanterns",
+      "summary": "Adjacent Areas contain 4 additional Golden Lanterns",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "gold",
+      "ornament": "crab",
+      "effects": [
+        {
+          "id": "golden-lanterns",
+          "scope": "border",
+          "label": "Golden Lanterns",
+          "aggregation": "sum",
+          "value": 4,
+          "unit": "lanterns"
+        }
+      ]
+    },
+    {
+      "id": "izaro-object",
+      "statId": "DeepwaterBorderIzaroObject",
+      "familyId": "izaro-object",
+      "familyName": "Altars to the Goddess",
+      "tier": null,
+      "tierLabel": null,
+      "name": "2 Altars to the Goddess",
+      "summary": "Adjacent Areas contain 2 Altars to the Goddess",
+      "confidence": "datamined",
+      "sourceUrl": "https://pastebin.com/RDLLR7jN",
+      "verifiedAt": "2026-07-24",
+      "icon": "labyrinth",
+      "ornament": "anchor",
+      "effects": [
+        {
+          "id": "izaro-object",
+          "scope": "border",
+          "label": "Altars to the Goddess",
+          "aggregation": "descriptive"
+        }
+      ]
+    }
+  ]
+}
