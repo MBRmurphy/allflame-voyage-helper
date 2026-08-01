@@ -22,7 +22,6 @@ Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyag
 - A side summary lists aggregate buffs for the best board; hover any placed tile to see that tile's combined buff totals and contributing Charts.
 - Eight orange unique areas receive T1 path priority: Diving Shoals, Pelagic Abyss, Sea Pillars, Sunken Totems, Clam Infested Shelf, Kishara's Rest, Anchorfield, and Infested Bathyspheres.
 - The best optimized path stays expanded while alternative paths are collapsed summaries that can be opened on demand.
-- The control window uses a playful underwater/bubble theme with sponge-yellow, coral, pineapple, and flower-cloud accents while retaining the parchment Voyage board.
 - Bounded beam optimizer avoids freezing the app on large Chart inventories.
 - Rotation-aware placement: Chart shapes can be rotated while planning.
 - Philosophy-informed scoring: rarity, quantity, pack size, stacked-deck/currency conversions, strongboxes, and Golden Lanterns are prioritized; low-value/danger clutter is de-emphasized outside dedicated profiles.
