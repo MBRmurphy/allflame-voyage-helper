@@ -1,4 +1,31 @@
-const catalog = require("../data/voyage-catalog.json");
+const baseCatalog = require("../data/voyage-catalog.json");
+const poedbBorderMods = require("../data/poedb-border-mods.json");
+
+if (poedbBorderMods.advertisedCount !== baseCatalog.borderModifiers.length || poedbBorderMods.rows.length !== poedbBorderMods.advertisedCount) {
+  throw new Error("PoEDB border-mod snapshot does not match the bundled Voyage border catalog.");
+}
+
+const poedbBorderRowsById = new Map(poedbBorderMods.rows.map((row) => [row.id, row]));
+const catalog = {
+  ...baseCatalog,
+  catalog: {
+    ...baseCatalog.catalog,
+    status: "live-poedb-verified",
+    verifiedAt: poedbBorderMods.verifiedAt,
+    sources: [...new Set([...(baseCatalog.catalog.sources || []), poedbBorderMods.source])],
+  },
+  borderModifiers: baseCatalog.borderModifiers.map((modifier) => {
+    const source = poedbBorderRowsById.get(modifier.id);
+    if (!source) throw new Error(`PoEDB border-mod snapshot is missing ${modifier.id}.`);
+    return {
+      ...modifier,
+      summary: source.sourceText || modifier.summary,
+      sourceText: source.sourceText,
+      sourceStatus: source.sourceStatus,
+      ...(source.sourceNote ? { sourceNote: source.sourceNote } : {}),
+    };
+  }),
+};
 
 const DIRECTIONS = ["north", "east", "south", "west"];
 const OPPOSITE = { north: "south", east: "west", south: "north", west: "east" };

@@ -9,6 +9,7 @@ Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyag
 
 - Click any outside edge slot directly on the board to change that tile side's fixed border mod.
 - Searchable border-mod picker: type keywords like `rarity`, `deck`, `lantern`, `pack`, `currency`, `rare`, or `strongbox` to quickly filter mods.
+- All 65 Deep Water border-mod rows are verified against [PoEDB's live Maiden Voyage table](https://poedb.tw/us/Maiden_Voyage#DeepWaterBorderMods); exact source wording now determines adjacent reciprocal targeting. PoEDB currently publishes row 60 with blank text, so the existing inferred second Magic-Monster-modifier label is retained and marked in the bundled snapshot.
 - Corner tiles expose two border slots, edge tiles expose one, and tile 5 has no border modifier.
 - Local Chart inventory with clipboard/manual text import.
 - Two-page, 120-slot visual Chart inventory. Each page holds 60 Charts in PoE's left-to-right, row-by-row order, with stable slot numbers #1-#120 so optimizer placements point back to the exact copied Chart.

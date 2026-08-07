@@ -1,0 +1,398 @@
+{
+  "source": "https://poedb.tw/us/Maiden_Voyage#DeepWaterBorderMods",
+  "verifiedAt": "2026-08-07",
+  "advertisedCount": 65,
+  "rows": [
+    {
+      "row": 1,
+      "id": "pack-size1",
+      "sourceText": "16% increased Pack Size in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 2,
+      "id": "pack-size2",
+      "sourceText": "24% increased Pack Size in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 3,
+      "id": "pack-size3",
+      "sourceText": "32% increased Pack Size in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 4,
+      "id": "monsters-at-least-magic",
+      "sourceText": "Monsters in adjacent Areas are at least Magic",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 5,
+      "id": "increased-rare-monsters1",
+      "sourceText": "50% increased number of Rare Monsters in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 6,
+      "id": "increased-rare-monsters2",
+      "sourceText": "75% increased number of Rare Monsters in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 7,
+      "id": "increased-rare-monsters3",
+      "sourceText": "100% increased number of Rare Monsters in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 8,
+      "id": "additional-sea-beasts1",
+      "sourceText": "Adjacent Areas contain 8 additional packs of Sea Beasts",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 9,
+      "id": "additional-sea-beasts2",
+      "sourceText": "Adjacent Areas contain 12 additional packs of Sea Beasts",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 10,
+      "id": "additional-sea-beasts3",
+      "sourceText": "Adjacent Areas contain 16 additional packs of Sea Beasts",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 11,
+      "id": "additional-crabs1",
+      "sourceText": "Adjacent Areas contain 8 additional packs of Crabs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 12,
+      "id": "additional-crabs2",
+      "sourceText": "Adjacent Areas contain 12 additional packs of Crabs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 13,
+      "id": "additional-crabs3",
+      "sourceText": "Adjacent Areas contain 16 additional packs of Crabs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 14,
+      "id": "additional-drowned1",
+      "sourceText": "Adjacent Areas contain 8 additional packs of the Drowned",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 15,
+      "id": "additional-drowned2",
+      "sourceText": "Adjacent Areas contain 12 additional packs of the Drowned",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 16,
+      "id": "additional-drowned3",
+      "sourceText": "Adjacent Areas contain 16 additional packs of the Drowned",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 17,
+      "id": "chart-effect1",
+      "sourceText": "Adjacent Areas have 40% increased explicit modifier magnitudes",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 18,
+      "id": "chart-effect2",
+      "sourceText": "Adjacent Areas have 60% increased explicit modifier magnitudes",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 19,
+      "id": "chart-effect3",
+      "sourceText": "Adjacent Areas have 80% increased explicit modifier magnitudes",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 20,
+      "id": "chance-to-not-consume-chart1",
+      "sourceText": "Adjacent Charts have 30% chance to not be consumed when beginning a Voyage",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 21,
+      "id": "chance-to-not-consume-chart2",
+      "sourceText": "Adjacent Charts have 50% chance to not be consumed when beginning a Voyage",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 22,
+      "id": "giant-octopus",
+      "sourceText": "Adjacent Areas contain Filthscrabble",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 23,
+      "id": "infinite-lanterns",
+      "sourceText": "Placing Lanterns does not reduce your Lantern count in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 24,
+      "id": "rare-monster-ancient",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Ancient Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 25,
+      "id": "rare-monster-divine",
+      "sourceText": "Rare Monsters adjacent in Areas drop 1 additional Divine Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 26,
+      "id": "rare-monster-exalted",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Exalted Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 27,
+      "id": "rare-monster-annulment",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Orbs of Annulment",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 28,
+      "id": "rare-monster-chaos",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Chaos Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 29,
+      "id": "rare-monster-vaal",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Vaal Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 30,
+      "id": "rare-monster-gemcutters",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Gemcutter's Prisms",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 31,
+      "id": "rare-monster-chromatic",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Chromatic Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 32,
+      "id": "rare-monster-regret",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Orbs of Regret",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 33,
+      "id": "rare-monster-blessed",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Blessed Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 34,
+      "id": "rare-monster-regal",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Regal Orbs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 35,
+      "id": "rare-monster-support",
+      "sourceText": "Rare Monsters in adjacent Areas have 20% chance to drop a Support Gem",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 36,
+      "id": "random-ducat-chest",
+      "sourceText": "Adjacent Areas contain a lost Pirate's Locker",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 37,
+      "id": "pirate-pack",
+      "sourceText": "Adjacent Areas contain a Brinerot raiding party",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 38,
+      "id": "rare-monsters-per-connection1",
+      "sourceText": "50% increased number of Rare monsters in adjacent Areas per connection",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 39,
+      "id": "rare-monsters-per-connection2",
+      "sourceText": "75% increased number of Rare monsters in adjacent Areas per connection",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 40,
+      "id": "quantity-per-connection1",
+      "sourceText": "50% reduced quantity of items found in adjacent Areas per connection\n120% increased Quantity of Items found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 41,
+      "id": "quantity-per-connection2",
+      "sourceText": "50% reduced quantity of items found in adjacent Areas per connection\n180% increased Quantity of Items found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 42,
+      "id": "equipment-to-gold1",
+      "sourceText": "25% of Equipment dropped by monsters in adjacent Areas is converted to Gold",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 43,
+      "id": "equipment-to-gold2",
+      "sourceText": "50% of Equipment dropped by monsters in adjacent Areas is converted to Gold",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 44,
+      "id": "currency-to-stacked-decks",
+      "sourceText": "Basic Currency items dropped by Monsters in adjacent Areas will instead drop as Stacked Decks",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 45,
+      "id": "rare-monster-scarab",
+      "sourceText": "Rare Monsters in adjacent Areas drop 1 additional Scarabs",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 46,
+      "id": "more-currency1",
+      "sourceText": "50% more Currency found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 47,
+      "id": "more-currency2",
+      "sourceText": "75% more Currency found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 48,
+      "id": "more-currency3",
+      "sourceText": "100% more Currency found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 49,
+      "id": "more-scarabs1",
+      "sourceText": "50% more Scarabs found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 50,
+      "id": "more-scarabs2",
+      "sourceText": "75% more Scarabs found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 51,
+      "id": "more-scarabs3",
+      "sourceText": "100% more Scarabs found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 52,
+      "id": "more-rarity1",
+      "sourceText": "50% more Rarity of Items found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 53,
+      "id": "more-rarity2",
+      "sourceText": "75% more Rarity of Items found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 54,
+      "id": "more-rarity3",
+      "sourceText": "100% more Rarity of Items found in adjacent Areas",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 55,
+      "id": "crab-miniboss",
+      "sourceText": "Adjacent Areas contain Captainsbane",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 56,
+      "id": "exp-gain1",
+      "sourceText": "Players in adjacent Areas gain 100% increased Experience",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 57,
+      "id": "exp-gain2",
+      "sourceText": "Players in adjacent Areas gain 150% increased Experience",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 58,
+      "id": "exp-gain3",
+      "sourceText": "Players in adjacent Areas gain 200% increased Experience",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 59,
+      "id": "magic-monster-mods1",
+      "sourceText": "Magic Monsters in adjacent Areas have an additional modifier",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 60,
+      "id": "magic-monster-mods2",
+      "sourceText": "",
+      "sourceStatus": "poedb-blank-row",
+      "sourceNote": "PoEDB publishes row 60 with an empty description; the existing inferred label is retained pending a live-text confirmation."
+    },
+    {
+      "row": 61,
+      "id": "treasure-anchors1",
+      "sourceText": "Adjacent Areas contain 2 additional Treasure Anchors",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 62,
+      "id": "treasure-anchors2",
+      "sourceText": "Adjacent Areas contain 4 additional Treasure Anchors",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 63,
+      "id": "sulphur-drops",
+      "sourceText": "Rare Monsters in adjacent Areas drop Dead Man's Sulphur",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 64,
+      "id": "golden-lanterns",
+      "sourceText": "Adjacent Areas contain 4 additional Golden Lanterns",
+      "sourceStatus": "verified"
+    },
+    {
+      "row": 65,
+      "id": "izaro-object",
+      "sourceText": "Adjacent Areas contain 2 Altars to the Goddess",
+      "sourceStatus": "verified"
+    }
+  ]
+}
