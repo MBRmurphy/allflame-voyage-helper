@@ -3,7 +3,6 @@
 Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyages.
 
 - **Desktop downloads:** https://github.com/MBRmurphy/allflame-voyage-helper/releases/latest
-- **Client-only web app:** https://mbrmurphy.github.io/allflame-voyage-helper/
 - **Source and issues:** https://github.com/MBRmurphy/allflame-voyage-helper
 
 ## What works now
