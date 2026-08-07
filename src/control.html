@@ -25,6 +25,7 @@
       <button id="importClipboard">Import Clipboard</button>
       <button id="toggleSequenceImport">Start Seq Import</button>
       <button id="optimize" class="primary">Find Best Voyage</button>
+      <button id="voyageUnderway" class="voyage-underway" disabled title="Remove the Charts highlighted by the best optimized board">Voyage Underway</button>
       <button id="clearAll" class="danger">Clear All</button>
     </div>
   </header>
@@ -37,6 +38,7 @@
           <p class="muted">Click any outside border slot. Type in the picker to search mods by keyword. Corner tiles have two slots; tile 5 has no border modifier and is preferred as the central route bridge.</p>
         </div>
       </div>
+      <div id="strategyGuide"></div>
       <div id="voyageBoardPlanner"></div>
     </section>
 
@@ -54,7 +56,12 @@
       <section class="panel inventory">
         <div class="section-title">
           <h2>Chart Inventory <span id="chartCount">0</span></h2>
+          <div class="inventory-pages" aria-label="Chart inventory pages">
+            <button type="button" data-inventory-page="0">Page 1</button>
+            <button type="button" data-inventory-page="1">Page 2</button>
+          </div>
         </div>
+        <p id="inventoryPageRange" class="muted inventory-page-range">Page 1 · slots 1-60</p>
         <div id="chartList" class="chart-list"></div>
       </section>
 

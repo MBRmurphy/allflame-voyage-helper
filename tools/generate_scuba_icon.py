@@ -63,9 +63,6 @@ hd.arc((264, 188, 760, 746), 194, 282, fill=(255, 245, 179, 135), width=18)
 highlight = highlight.filter(ImageFilter.GaussianBlur(2))
 image = Image.alpha_composite(image, highlight)
 
-png_path = OUT / "scuba-diver-helmet.png"
 ico_path = OUT / "scuba-diver-helmet.ico"
-image.save(png_path, optimize=True)
 image.save(ico_path, format="ICO", sizes=[(16, 16), (24, 24), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)])
-print(png_path)
 print(ico_path)

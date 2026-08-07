@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld("voyage", {
   setBoardBorderModifier: (tileIndex, side, modifierId) => ipcRenderer.invoke("set-board-border-modifier", tileIndex, side, modifierId),
   setProfile: (profile) => ipcRenderer.invoke("set-profile", profile),
   optimize: () => ipcRenderer.invoke("optimize"),
+  voyageUnderway: () => ipcRenderer.invoke("voyage-underway"),
   toggleOverlay: () => ipcRenderer.invoke("toggle-overlay"),
   checkForUpdates: () => ipcRenderer.invoke("check-for-updates"),
   downloadAndInstallUpdate: () => ipcRenderer.invoke("download-and-install-update"),

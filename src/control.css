@@ -19,6 +19,9 @@ button, select, input { background:#07546c; color:#f3fbff; border:2px solid #38a
 button { cursor:pointer; }
 button:hover { background:#0a738a; border-color:var(--foam); }
 button.primary { background:#d6b91e; border-color:#fff07c; color:#14242b; font-weight:900; box-shadow:0 3px 0 #71600d,inset 0 1px 0 #fff6a6; }
+button.voyage-underway { background:#18704d; border-color:#75f0b6; color:#effff8; font-weight:900; box-shadow:0 3px 0 #0b3f2a,inset 0 1px 0 #baffdc55; }
+button:disabled { opacity:.48; cursor:not-allowed; filter:grayscale(.45); }
+button:disabled:hover { background:#07546c; border-color:#38a8b9; }
 button.active { background:#79521b; border-color:#d9a64e; box-shadow:0 0 0 2px rgba(217,166,78,.22); }
 button.update-ready { background:#1f7a4d; border-color:#86ffc0; color:#effff5; font-weight:900; box-shadow:0 0 0 2px rgba(134,255,192,.18); }
 button.danger { background:#9b3654; border-color:#f08ca7; }
@@ -38,6 +41,18 @@ kbd { background:#07101b; border:1px solid #344f70; border-radius:5px; padding:2
 @keyframes bubble-drift { from { transform:translateY(14px); } to { transform:translateY(-18px); } }
 
 .voyage-board-title { color:#d9cba5; font-weight:800; letter-spacing:.04em; text-transform:uppercase; font-size:12px; margin:8px 0; }
+.strategy-card { margin:12px 0 18px; padding:14px 16px; border:2px solid #c28636; border-radius:14px; background:linear-gradient(145deg,#271a0d,#432b10); box-shadow:inset 0 1px 0 #ffe6a244,0 7px 20px #0006; }
+.strategy-card.is-ready { border-color:#4fc98e; background:linear-gradient(145deg,#0b2e24,#124a35); }
+.strategy-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.strategy-heading h3 { margin:1px 0 0; color:#ffe798; font-size:18px; }
+.strategy-kicker { color:#bba66e; font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+.strategy-heading > strong { padding:5px 9px; border:1px solid currentColor; border-radius:999px; color:#ffc76c; font-size:10px; letter-spacing:.08em; }
+.strategy-card.is-ready .strategy-heading > strong { color:#74efb1; }
+.strategy-status { color:#f2e4bd; font-weight:800; }
+.strategy-card ol, .strategy-card ul { margin:8px 0 0; padding-left:22px; color:#d9d1be; font-size:12px; line-height:1.45; }
+.strategy-prep { color:#86c9ff !important; }
+.strategy-alternatives { color:#9de6a2 !important; }
+.strategy-roll-notes { color:#ffd178 !important; }
 .voyage-board-frame { position:relative; width:min(100%, 920px); margin:0 auto; padding:74px; border-radius:22px; border:3px solid #6f593d; background:radial-gradient(circle at center,#ded8bd 0,#c9c09c 60%,#88785b 100%); box-shadow:inset 0 0 28px #fff8, inset 0 0 46px #332614, 0 16px 40px #0009; overflow:visible; }
 .voyage-board-frame::before { content:""; position:absolute; inset:15px; border:1px solid #776b51; border-radius:13px; box-shadow:inset 0 0 22px #5a4b30aa; pointer-events:none; }
 .voyage-grid { position:relative; display:grid; grid-template-columns:repeat(3,1fr); aspect-ratio:1/1; margin:0 auto; border:1px solid #9f9577; background:repeating-linear-gradient(28deg,rgba(126,120,95,.11) 0,rgba(126,120,95,.11) 1px,transparent 1px,transparent 9px),#d9d3b5; }
@@ -47,6 +62,11 @@ kbd { background:#07101b; border:1px solid #344f70; border-radius:5px; padding:2
 .chart-visual.has-chart { background:#eee5bf; border-color:#5a4c31; }
 .chart-visual b { position:absolute; right:6px; bottom:3px; font-size:12px; color:#6a5b3f; }
 .chart-slot-badge { position:absolute; z-index:3; left:-8px; top:-8px; min-width:26px; height:26px; display:grid; place-items:center; border-radius:50%; background:#111820; border:2px solid #79ffba; color:#79ffba; font-size:11px; font-weight:900; box-shadow:0 2px 8px #0009; }
+.strategy-tile-label { position:absolute; z-index:5; left:50%; top:-13px; transform:translateX(-50%); min-width:34px; padding:3px 7px; border-radius:999px; background:#18364a; border:2px solid #9adfff; color:#eaffff; font-size:9px; font-weight:1000; letter-spacing:.05em; box-shadow:0 2px 8px #0008; }
+.strategy-tile-label.kind-divine-target { background:#70520b; border-color:#fff08a; color:#fff8b8; }
+.strategy-tile-label.kind-strongbox-source, .strategy-tile-label.kind-rush-source { background:#7b3517; border-color:#ffaf69; color:#fff0d0; }
+.strategy-tile-label.kind-rush-target { background:#204f90; border-color:#8cc4ff; }
+.strategy-tile-label.kind-filler { background:#592d2d; border-color:#e58a7d; }
 .t1-area-badge { position:absolute; z-index:4; right:-8px; top:-8px; min-width:27px; height:24px; display:grid; place-items:center; border-radius:8px; background:linear-gradient(#ffad3f,#b94f12); border:2px solid #ffe29a; color:#281306; font-size:10px; font-weight:1000; box-shadow:0 2px 8px #0009; }
 .dot { width:8px; height:8px; border-radius:50%; background:#9b9479; }
 .chart-shape-svg { width:74px; height:74px; stroke:#10100e; stroke-width:8; stroke-linecap:round; fill:#10100e; filter:drop-shadow(0 1px 0 #e6ddbd); }
@@ -79,6 +99,10 @@ kbd { background:#07101b; border:1px solid #344f70; border-radius:5px; padding:2
 .side-west::before, .side-east::before { content:"〰〰"; position:absolute; top:-20px; color:#5d5848; opacity:.55; font-size:26px; letter-spacing:-8px; }
 .board-center-note { position:absolute; z-index:4; top:8px; right:8px; color:#71694f; font-size:10px; text-align:right; text-transform:uppercase; letter-spacing:.04em; }
 
+.inventory-pages { display:flex; align-items:center; gap:5px; }
+.inventory-pages button { padding:5px 9px; border-radius:8px; font-size:10px; font-weight:900; }
+.inventory-pages button.active { background:#d6b91e; border-color:#fff07c; color:#14242b; }
+.inventory-page-range { margin:2px 0 7px; text-align:right; }
 .chart-list { display:grid; grid-template-columns:repeat(6, 1fr); gap:4px; max-height:560px; overflow:auto; padding:6px; background:#05090d; border:1px solid #2f2418; border-radius:10px; }
 .inventory-slot { position:relative; aspect-ratio:1/1.12; min-width:0; border:1px solid #5d4529; background:radial-gradient(circle at center,#132018 0,#070b0e 64%,#020304 100%); border-radius:2px; overflow:hidden; color:#dbeaff; }
 .inventory-slot.is-empty { display:grid; place-items:center; color:#28313a; background:radial-gradient(circle at center,#0b1014 0,#030507 70%); }

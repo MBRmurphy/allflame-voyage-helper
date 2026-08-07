@@ -1,5 +1,7 @@
 let currentState = null;
 let activeBorderPick = null;
+let inventoryPage = 0;
+let lastInventoryImportId = null;
 
 const $ = (id) => document.getElementById(id);
 
@@ -29,11 +31,29 @@ function summarizeTileModifiers(modifiers = []) {
 function renderState(state) {
   currentState = state;
   $("status").textContent = state.status || "Ready";
-  $("chartCount").textContent = `${state.charts.length}/60`;
+  $("chartCount").textContent = `${state.charts.length}/${state.inventoryMaxSlots || 120}`;
+  const importedSlot = state.lastImport?.inventorySlot;
+  if (state.lastImport?.id && state.lastImport.id !== lastInventoryImportId && Number.isInteger(importedSlot)) {
+    inventoryPage = Math.floor((importedSlot - 1) / (state.inventoryPageSize || 60));
+    lastInventoryImportId = state.lastImport.id;
+  } else if (!state.lastImport) {
+    lastInventoryImportId = null;
+  }
+  if (!state.charts.length) inventoryPage = 0;
+  inventoryPage = Math.min(Math.max(0, inventoryPage), (state.inventoryPageCount || 2) - 1);
   const sequenceButton = $("toggleSequenceImport");
   if (sequenceButton) {
     sequenceButton.textContent = state.sequenceImportActive ? "Stop Seq Import" : "Start Seq Import";
     sequenceButton.classList.toggle("active", Boolean(state.sequenceImportActive));
+  }
+  const underwayButton = $("voyageUnderway");
+  if (underwayButton) {
+    const selectedCount = state.voyageUnderwayCount || 0;
+    underwayButton.disabled = selectedCount === 0;
+    underwayButton.textContent = selectedCount ? `Voyage Underway (${selectedCount})` : "Voyage Underway";
+    underwayButton.title = selectedCount
+      ? `Remove the ${selectedCount} Charts highlighted by the best optimized board`
+      : "Optimize a runnable Voyage to select Charts";
   }
   const updateButton = $("checkUpdate");
   if (updateButton) {
@@ -56,7 +76,9 @@ function renderState(state) {
       : "Manually check GitHub Releases for a newer portable build";
   }
   renderProfiles(state);
+  renderStrategyGuide(state.strategyGuide);
   renderBoard(state.boardBorderModifiers || [], state.borderModifierOptions || []);
+  renderInventoryPager(state);
   renderCharts(state.charts);
   renderOptimizer(state.optimizer);
   renderBuffSummary(state.optimizer);
@@ -70,6 +92,31 @@ function renderProfiles(state) {
   select.value = state.profile || existing || "general";
 }
 
+function renderStrategyGuide(guide) {
+  const container = $("strategyGuide");
+  if (!container) return;
+  if (!guide) {
+    container.innerHTML = "";
+    return;
+  }
+  const list = (items, className = "") => items?.length
+    ? `<ul class="${className}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
+    : "";
+  container.innerHTML = `
+    <section class="strategy-card strategy-${escapeHtml(guide.id)} ${guide.ready ? "is-ready" : "needs-work"}">
+      <div class="strategy-heading">
+        <div><span class="strategy-kicker">Active optimizer strategy</span><h3>${escapeHtml(guide.title)}</h3></div>
+        <strong>${guide.ready ? "READY" : "BUILDING"}</strong>
+      </div>
+      <p class="strategy-status">${escapeHtml(guide.status)}</p>
+      ${list(guide.prep, "strategy-prep")}
+      <ol>${(guide.steps || []).map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ol>
+      ${list(guide.alternatives, "strategy-alternatives")}
+      ${list(guide.rollNotes, "strategy-roll-notes")}
+    </section>
+  `;
+}
+
 function renderBoard(boardBorderModifiers, options) {
   const planner = $("voyageBoardPlanner");
   if (!planner) return;
@@ -81,8 +128,24 @@ function renderBoard(boardBorderModifiers, options) {
     areaScores: best?.evaluation?.areaScores || [],
     boardBorderModifiers,
     options,
+    strategyLabels: currentState?.strategyGuide?.boardLabels || [],
     interactive: true,
     title: best ? "Current best optimized board" : "Plan board border mods",
+  });
+}
+
+function renderInventoryPager(state = currentState) {
+  if (!state) return;
+  const pageSize = state.inventoryPageSize || 60;
+  const startSlot = inventoryPage * pageSize + 1;
+  const endSlot = startSlot + pageSize - 1;
+  const chartsOnPage = state.charts.filter((chart) => chart.inventorySlot >= startSlot && chart.inventorySlot <= endSlot).length;
+  const range = $("inventoryPageRange");
+  if (range) range.textContent = `Page ${inventoryPage + 1} · slots ${startSlot}-${endSlot} · ${chartsOnPage}/${pageSize} Charts`;
+  document.querySelectorAll("[data-inventory-page]").forEach((button) => {
+    const page = Number(button.dataset.inventoryPage);
+    button.classList.toggle("active", page === inventoryPage);
+    button.setAttribute("aria-current", page === inventoryPage ? "page" : "false");
   });
 }
 
@@ -148,13 +211,14 @@ function sideLabel(side) {
   return ({ north: "Top", east: "Right", south: "Bottom", west: "Left" }[side] || side);
 }
 
-function voyageBoardHtml({ board = [], fixedTileModifiers = [], appliedModifiers = [], areaScores = [], boardBorderModifiers = [], interactive = false, title = "Voyage board" }) {
+function voyageBoardHtml({ board = [], fixedTileModifiers = [], appliedModifiers = [], areaScores = [], boardBorderModifiers = [], strategyLabels = [], interactive = false, title = "Voyage board" }) {
   const cells = Array.from({ length: 9 }, (_, index) => {
     const chart = board[index];
     const fixedMods = fixedTileModifiers[index] || [];
     const appliedMods = appliedModifiers[index] || [];
     const tileBuffs = summarizeTileModifiers(appliedMods);
     const tileBorderMods = boardBorderModifiers[index] || {};
+    const strategyLabel = strategyLabels[index];
 
     const borderControls = index === 4
       ? `<div class="board-center-note">no border<br>modifier</div>`
@@ -169,6 +233,7 @@ function voyageBoardHtml({ board = [], fixedTileModifiers = [], appliedModifiers
       <div class="voyage-cell cell-${index}">
         ${borderControls}
         <div class="chart-visual ${chart ? "has-chart" : ""}">
+          ${strategyLabel ? `<span class="strategy-tile-label kind-${escapeHtml(strategyLabel.kind)}" title="${escapeHtml(strategyLabel.description)}">${escapeHtml(strategyLabel.label)}</span>` : ""}
           ${chart?.inventorySlot ? `<span class="chart-slot-badge">#${chart.inventorySlot}</span>` : ""}
           ${chart?.tierOneUniqueArea ? `<span class="t1-area-badge" title="T1 unique area: ${escapeHtml(chart.tierOneUniqueArea)}">T1</span>` : ""}
           ${chart ? connectionSvg(chart) : `<span class="dot"></span>`}
@@ -194,9 +259,11 @@ function renderCharts(charts) {
   const list = $("chartList");
   const bestBoard = currentState?.optimizer?.results?.[0]?.board || [];
   const bestPositions = new Map(bestBoard.flatMap((chart, tileIndex) => chart ? [[chart.id, tileIndex + 1]] : []));
-  const chartBySlot = new Map(charts.map((chart, index) => [index + 1, chart]));
-  list.innerHTML = Array.from({ length: 60 }, (_, index) => {
-    const slot = index + 1;
+  const chartBySlot = new Map(charts.map((chart) => [chart.inventorySlot, chart]));
+  const pageSize = currentState?.inventoryPageSize || 60;
+  const firstSlot = inventoryPage * pageSize + 1;
+  list.innerHTML = Array.from({ length: pageSize }, (_, index) => {
+    const slot = firstSlot + index;
     const chart = chartBySlot.get(slot);
     if (!chart) return `<div class="inventory-slot is-empty"><span>${slot}</span></div>`;
     const bestTile = bestPositions.get(chart.id);
@@ -246,7 +313,7 @@ function renderBuffSummary(result) {
 function optimizerResultBody(entry) {
   return `
     <p class="muted">${entry.evaluation.validity.isLinearPath ? "✅ Linear full route" : entry.evaluation.validity.isValid ? "✅ Connected" : "⚠️ Invalid graph"} · Connections ${entry.evaluation.validity.reciprocalEdges.length} · Tile 5 ${entry.evaluation.centerConnections || 0}/4 · T1 areas ${entry.evaluation.tierOneUniqueAreaCount || 0} · Golden/currency ${fmtScore(entry.evaluation.topTierRewardScore)}</p>
-    ${voyageBoardHtml({ board: entry.board, fixedTileModifiers: entry.evaluation.fixedTileModifiers || [], appliedModifiers: entry.evaluation.appliedModifiers || [], areaScores: entry.evaluation.areaScores || [], boardBorderModifiers: entry.evaluation.boardBorderModifiers || [], interactive: false, title: `Optimized layout #${entry.rank}` })}
+    ${voyageBoardHtml({ board: entry.board, fixedTileModifiers: entry.evaluation.fixedTileModifiers || [], appliedModifiers: entry.evaluation.appliedModifiers || [], areaScores: entry.evaluation.areaScores || [], boardBorderModifiers: entry.evaluation.boardBorderModifiers || [], strategyLabels: currentState?.strategyGuide?.boardLabels || [], interactive: false, title: `Optimized layout #${entry.rank}` })}
     <div class="totals">
       ${entry.evaluation.totals.slice(0, 10).map((total) => `<div>${escapeHtml(total.label)}: <b>${total.descriptive ? total.descriptive + "x" : Math.round(total.value) + (total.unit || "")}</b></div>`).join("")}
     </div>
@@ -320,7 +387,14 @@ document.addEventListener("click", async (event) => {
   const excludeId = event.target?.dataset?.exclude;
   const pickTile = event.target.closest?.("[data-pick-border-tile]");
   const modOption = event.target.closest?.("[data-mod-id]");
+  const inventoryPageButton = event.target.closest?.("[data-inventory-page]");
   try {
+    if (inventoryPageButton) {
+      inventoryPage = Number(inventoryPageButton.dataset.inventoryPage);
+      renderInventoryPager();
+      renderCharts(currentState?.charts || []);
+      return;
+    }
     if (pickTile) {
       openModPicker(Number(pickTile.dataset.pickBorderTile), pickTile.dataset.pickBorderSide);
       return;
@@ -336,6 +410,12 @@ document.addEventListener("click", async (event) => {
     if (event.target.id === "importText") await window.voyage.importText($("manualText").value);
     if (event.target.id === "clearCharts") await window.voyage.clearCharts();
     if (event.target.id === "clearAll") await window.voyage.clearAll();
+    if (event.target.id === "voyageUnderway") {
+      const selectedCount = currentState?.voyageUnderwayCount || 0;
+      if (selectedCount && window.confirm(`Set this Voyage underway and remove its ${selectedCount} highlighted Charts from inventory?`)) {
+        await window.voyage.voyageUnderway();
+      }
+    }
     if (event.target.id === "checkUpdate") {
       event.target.disabled = true;
       try {

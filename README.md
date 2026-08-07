@@ -11,12 +11,13 @@ Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyag
 - Searchable border-mod picker: type keywords like `rarity`, `deck`, `lantern`, `pack`, `currency`, `rare`, or `strongbox` to quickly filter mods.
 - Corner tiles expose two border slots, edge tiles expose one, and tile 5 has no border modifier.
 - Local Chart inventory with clipboard/manual text import.
-- 60-slot visual Chart inventory matching PoE's left-to-right, row-by-row order. Imported Charts are numbered #1-#60 so optimizer placements can point back to the exact copied Chart.
+- Two-page, 120-slot visual Chart inventory. Each page holds 60 Charts in PoE's left-to-right, row-by-row order, with stable slot numbers #1-#120 so optimizer placements point back to the exact copied Chart.
 - Sequential Chart import mode: press `Ctrl+Shift+V` or **Start Seq Import**, then hover/copy each Chart with `Ctrl+C`; press it again to stop.
 - Right-click or **Exclude** a Chart to remove it from the optimizer pool without deleting it.
 - Clear All resets Charts, optimizer exclusions, board border mods, and optimizer state.
 - 3x3 Voyage optimizer with reciprocal-connection validity and visualized final Chart position/rotation.
 - Best Voyage board labels each placed Chart with its inventory number and highlights inventory slots with the destination board tile.
+- **Voyage Underway** removes the nine Charts highlighted by the best optimized board after confirmation, leaves their inventory slots empty, and saves the remaining inventory without shifting unrelated Charts.
 - Tile 5 is preferentially used as a three- or four-way bridge when the active Chart shapes can produce a valid reciprocal board.
 - A side summary lists aggregate buffs for the best board; hover any placed tile to see that tile's combined buff totals and contributing Charts.
 - Eleven orange unique areas receive T1 path priority: Diving Shoals, Pelagic Abyss, Sea Pillars, Sunken Totems, Clam Infested Shelf, Kishara's Rest, Lost Ruins, Hazardous Depths, Brine King's Domain, Anchorfield, and Infested Bathyspheres.
@@ -25,6 +26,9 @@ Read-only Windows desktop helper for Path of Exile 1 Curse of the Allflame Voyag
 - Rotation-aware placement: Chart shapes can be rotated while planning.
 - Philosophy-informed scoring: rarity, quantity, pack size, stacked-deck/currency conversions, strongboxes, and Golden Lanterns are prioritized; low-value/danger clutter is de-emphasized outside dedicated profiles.
 - General Profit treats Additional Divine Orb, Golden Lanterns, More Currency, and currency-to-Stacked-Deck conversion as top-tier rewards, with Divine outcomes receiving the highest base weight.
+- **Divine Border Strategy** detects the selected Additional Divine Orb border tile, puts Pelagic Abyss on that exact tile, feeds it with reciprocal rolled 3/4/5 adjacent-Strongbox Charts, and fills remaining positions with Voyage-wide Rare Monster/Pack Size support.
+- **Strongbox Rush Strategy** puts a 2-4 adjacent-Strongbox Chart in tile 5, builds four reciprocal rush targets at tiles 2/4/6/8, and keeps 5-Strongbox Charts out of the Voyage so they remain available for Divine borders.
+- Both strategy profiles show an in-app strategy card, live readiness status, board labels, prep instructions, and the screenshot-derived Strongbox rolling notes.
 - Closing the control window quits the app completely, including overlay/timers/global hotkeys.
 - Optional **Check Updates** button queries the latest public GitHub Release only when clicked; installing remains user initiated and nothing is checked or downloaded silently.
 
@@ -59,21 +63,17 @@ npm version patch
 git push origin main --follow-tags
 ```
 
-The `v*` tag runs `.github/workflows/release.yml`, builds the Windows portable EXE and static web ZIP on GitHub, generates SHA-256 checksums, and publishes them as an immutable GitHub Release. Use `npm version minor` or `npm version major` when appropriate.
-
-## Build the private client-only web app
-
-```bash
-npm ci
-npm run check
-npm run web:build
-```
-
-Deploy the contents of `web-dist/` to any static host. Imported Charts and configuration are kept in browser `localStorage`; the application has no account, telemetry, database, API, or server upload. Its production Content Security Policy also blocks outbound app connections with `connect-src 'none'`. Use **Clear Local Data** to remove the saved browser state. See `WEB-DEPLOYMENT.md` for Cloudflare Pages, Netlify, GitHub Pages, preview, update, and clipboard details.
+The `v*` tag runs `.github/workflows/release.yml`, builds the Windows portable EXE on GitHub, generates its SHA-256 checksum, and publishes both files as immutable GitHub Release assets. Use `npm version minor` or `npm version major` when appropriate.
 
 ## Board border modifiers and chart pool
 
 Use the parchment **Voyage Board** to manually select fixed border mods for every outside edge side. Click a border slot directly on the board to open the searchable modifier picker. Corner tiles expose two slots, edge tiles expose one, and tile 5 is the center/middle tile with no border mod. Border modifiers worded for adjacent Areas/Charts apply only across a physically touching reciprocal Chart line; if no such line exists, that modifier is inactive and the result notes explain why. Self/Area border effects remain on their configured tile.
+
+## Voyage strategies
+
+Choose **Divine Border Strategy** from the scoring-profile menu after selecting an **Additional Divine Orb** border. The helper treats that border's tile as the target, requires Pelagic Abyss there, and prioritizes reciprocal Charts rolled to add 3, 4, or 5 Strongboxes from every internal neighboring tile. A rolled 2-Strongbox Chart is not counted as Divine-ready. Remaining Charts favor Voyage-wide Rare Monster and Pack Size increases rather than adjacent-only wording.
+
+Choose **Strongbox Rush Strategy** for fast filler Voyages. Tile 5 receives the 2-4 adjacent-Strongbox Chart, tiles 2/4/6/8 are marked as rush targets, and every other tile is treated as shape-valid filler. The optimizer deliberately saves 5-Strongbox Charts for Divine boards. Message in a Bottle or another adjacent reward can be used manually as the center alternative.
 
 ## Sequential Chart import
 
@@ -83,7 +83,7 @@ After **Find Best Voyage**, the main board and optimizer result cards render the
 
 If you do not want a Chart considered for the next optimizer run, right-click its card or press **Exclude**. It stays in inventory and can be returned with right-click or **Use**.
 
-The inventory is capped at 60 copied Charts. Slot #1 is the first copied Chart at the top-left, then slots fill left-to-right and continue on the next row. After optimizing, the inventory highlights Charts used in the best layout with their board tile number.
+The inventory is capped at 120 copied Charts across two 60-slot pages. Page 1 contains slots #1-#60 and page 2 contains slots #61-#120. Imports always fill the first vacant slot across both pages and automatically open the page containing the newly imported Chart. Consumed slots remain empty without shifting unrelated Charts. After optimizing, the inventory highlights Charts used in the best layout with their board tile number.
 
 ## Route priority
 

@@ -59,7 +59,38 @@ assert.equal(core.exposedBorderSides(0).length, 2);
 assert.ok(core.borderModifierOptions().length > 20);
 const opt = core.optimizeVoyage(charts, "general", areaMods, borderMods);
 assert.ok(opt.results.length > 0);
+assert.deepEqual(core.bestVoyageChartIds(opt), opt.results[0].board.map((placedChart) => placedChart.id));
 assert.equal(opt.results[0].board.length, 9);
+const underwayIds = core.voyageUnderwayChartIds(opt, charts);
+assert.equal(underwayIds.length, 9);
+const coreRemoval = core.removeVoyageCharts(charts, [underwayIds[0], "unrelated-id"], opt);
+assert.equal(coreRemoval.removedCount, 9);
+assert.equal(coreRemoval.charts.length, 0);
+assert.deepEqual(coreRemoval.excludedChartIds, ["unrelated-id"]);
+assert.throws(() => core.voyageUnderwayChartIds({ results: [{ board: opt.results[0].board.slice(0, 8) }] }, charts), /exactly nine Charts/);
+assert.throws(() => core.voyageUnderwayChartIds({ results: [{ board: [...opt.results[0].board.slice(0, 8), opt.results[0].board[0]] }] }, charts), /nine unique Charts/);
+assert.throws(() => core.voyageUnderwayChartIds(opt, charts.slice(1)), /no longer matches/);
+assert.throws(() => core.voyageUnderwayChartIds({ results: [{ board: opt.results[0].board.map((placed, index) => index ? placed : { ...placed, id: "   " }) }] }, charts), /valid nonempty ID/);
+assert.throws(() => core.voyageUnderwayChartIds({ results: [{ board: opt.results[0].board.map((placed, index) => index ? placed : { ...placed, id: 42 }) }] }, charts), /valid nonempty ID/);
+const invalidUnderwayBoard = charts.map((candidate) => ({ ...candidate, patternId: "end-north", connections: ["north"], rotation: 0 }));
+const invalidUnderwayOptimizer = { results: [{ board: invalidUnderwayBoard }] };
+assert.equal(core.availableVoyageUnderwayChartIds(invalidUnderwayOptimizer, charts).length, 0);
+assert.throws(() => core.removeVoyageCharts(charts, [], invalidUnderwayOptimizer), /not a runnable reciprocal Chart board/);
+const normalizedSlots = core.normalizeInventorySlots([{ id: "a" }, { id: "b", inventorySlot: 5 }, { id: "c", inventorySlot: 5 }]);
+assert.deepEqual(normalizedSlots.map((chart) => chart.inventorySlot), [1, 5, 2]);
+assert.equal(core.firstAvailableInventorySlot(normalizedSlots), 3);
+assert.equal(core.INVENTORY_PAGE_SIZE, 60);
+assert.equal(core.INVENTORY_PAGE_COUNT, 2);
+assert.equal(core.INVENTORY_MAX_SLOTS, 120);
+assert.deepEqual(core.inventoryPageSlotRange(0), { page: 0, startSlot: 1, endSlot: 60 });
+assert.deepEqual(core.inventoryPageSlotRange(1), { page: 1, startSlot: 61, endSlot: 120 });
+assert.throws(() => core.inventoryPageSlotRange(2), /Inventory page must be 1 or 2/);
+const fullFirstInventoryPage = Array.from({ length: 60 }, (_, index) => ({ id: `page-one-${index}`, inventorySlot: index + 1 }));
+assert.equal(core.firstAvailableInventorySlot(fullFirstInventoryPage), 61, "Imports should continue into page two after slot 60");
+const secondPageSlot = core.normalizeInventorySlots([{ id: "page-two", inventorySlot: 120 }]);
+assert.equal(secondPageSlot[0].inventorySlot, 120, "The last slot on page two should remain stable");
+const fullTwoPageInventory = Array.from({ length: 120 }, (_, index) => ({ id: `full-${index}`, inventorySlot: index + 1 }));
+assert.equal(core.firstAvailableInventorySlot(fullTwoPageInventory), null, "A 120-Chart inventory should report no vacant slot");
 assert.ok(opt.results[0].evaluation.areaModifiers[4].length >= 2);
 assert.deepEqual(opt.results[0].evaluation.boardBorderModifiers[4], {});
 assert.ok(opt.results[0].evaluation.fixedTileModifiers[0].length >= 2);
@@ -118,6 +149,67 @@ assert.equal(divineBorderEvaluation.appliedModifiers[0].some((modifier) => modif
 assert.ok(divineBorderEvaluation.topTierRewardScore > touchingBorderEvaluation.topTierRewardScore, "A Divine outcome should outrank one Golden Lantern application");
 assert.ok(core.PROFILES.general.weights["Additional Divine Orb"] > core.PROFILES.general.weights["Golden Lanterns"]);
 assert.ok(core.PROFILES.general.weights["Golden Lanterns"] > core.PROFILES.general.weights["Item Quantity"]);
+assert.equal(core.PROFILES.divineborder.label, "Divine Border Strategy");
+assert.equal(core.PROFILES.strongboxrush.label, "Strongbox Rush Strategy");
+assert.equal(core.PROFILES.divineborder.strategy, "divine-border");
+assert.equal(core.PROFILES.strongboxrush.strategy, "strongbox-rush");
+const divineStrategyBorders = core.emptyBoardBorderModifierState();
+divineStrategyBorders[7].south = "rare-monster-divine";
+const divineStrategyPool = [
+  { id: "divine-target", rawText: "Rarity: Unique\nPelagic Abyss\nChart Shape: Crossing", implicitId: "voyage-increased-rare-monsters" },
+  ...Array.from({ length: 3 }, (_, index) => ({ id: `divine-box-${index}`, rawText: "Chart Shape: Crossing", implicitId: "adjacent-strongboxes3" })),
+  ...Array.from({ length: 5 }, (_, index) => ({ id: `divine-global-${index}`, rawText: "Chart Shape: Crossing", implicitId: index % 2 ? "voyage-pack-size2" : "voyage-increased-rare-monsters" })),
+].map((candidate, index) => ({
+  ...candidate,
+  displayName: candidate.id,
+  baseId: "charted-map",
+  patternId: "cross",
+  connections: crossPattern.connections,
+  inventorySlot: index + 1,
+}));
+const divineStrategyOpt = core.optimizeVoyage(divineStrategyPool, "divineborder", [], divineStrategyBorders);
+assert.equal(divineStrategyOpt.results[0].board[7].id, "divine-target", "Pelagic Abyss should occupy the Divine border tile");
+assert.deepEqual([4, 6, 8].map((index) => divineStrategyOpt.results[0].board[index].implicitId).sort(), Array(3).fill("adjacent-strongboxes3"), "All three reciprocal neighbors should feed 5 Strongboxes into the Divine tile");
+assert.equal(divineStrategyOpt.results[0].evaluation.strategyReady, true);
+assert.equal(divineStrategyOpt.results[0].evaluation.strategyDetails.strongboxTotal, 15);
+const rolledStrongboxBoard = divineStrategyOpt.results[0].board.map((chart) => ({ ...chart }));
+rolledStrongboxBoard[4] = { ...rolledStrongboxBoard[4], implicitId: "adjacent-strongboxes2", rawText: "Adjacent Areas contain 4 additional Strongboxes\nChart Shape: Crossing" };
+rolledStrongboxBoard[6] = { ...rolledStrongboxBoard[6], implicitId: "adjacent-strongboxes2", rawText: "Adjacent Areas contain 2 additional Strongboxes\nChart Shape: Crossing" };
+rolledStrongboxBoard[8] = { ...rolledStrongboxBoard[8], implicitId: "voyage-pack-size2", rawText: "Chart Shape: Crossing" };
+const rolledStrongboxEvaluation = core.evaluateBoard(rolledStrongboxBoard, "divineborder", [], divineStrategyBorders);
+assert.equal(rolledStrongboxEvaluation.strategyDetails.strongboxSources.length, 1, "Divine strategy should save rolled 3/4/5 adjacent Strongbox Charts, not a rolled 2");
+assert.equal(rolledStrongboxEvaluation.strategyDetails.strongboxTotal, 4);
+const strongboxRushPool = [
+  { id: "rush-center", implicitId: "adjacent-strongboxes2" },
+  { id: "save-five-box", implicitId: "adjacent-strongboxes3" },
+  ...Array.from({ length: 8 }, (_, index) => ({ id: `rush-filler-${index}`, implicitId: index % 2 ? "voyage-pack-size1" : "voyage-quantity1" })),
+].map((candidate, index) => ({
+  ...candidate,
+  displayName: candidate.id,
+  baseId: "charted-map",
+  rawText: "Chart Shape: Crossing",
+  patternId: "cross",
+  connections: crossPattern.connections,
+  inventorySlot: index + 1,
+}));
+const strongboxRushOpt = core.optimizeVoyage(strongboxRushPool, "strongboxrush");
+assert.equal(strongboxRushOpt.results[0].board[4].id, "rush-center", "The 2-4 adjacent Strongbox Chart belongs in tile 5");
+assert.equal(strongboxRushOpt.results[0].board.some((chart) => chart.id === "save-five-box"), false, "The 5 Strongbox Chart should be saved for Divine borders");
+assert.deepEqual(strongboxRushOpt.results[0].evaluation.strategyDetails.targetTiles, [1, 3, 5, 7]);
+assert.equal(strongboxRushOpt.results[0].evaluation.strategyReady, true);
+const divineGuide = core.strategyGuide("divineborder", divineStrategyOpt.results[0].evaluation, divineStrategyBorders);
+assert.equal(divineGuide.title, "Divine Border Strategy");
+assert.equal(divineGuide.ready, true);
+assert.equal(divineGuide.boardLabels[7].label, "DIVINE");
+assert.deepEqual([4, 6, 8].map((index) => divineGuide.boardLabels[index].label), ["SB", "SB", "SB"]);
+assert.ok(divineGuide.steps.some((step) => step.includes("Pelagic Abyss")));
+assert.ok(divineGuide.rollNotes.some((note) => note.includes("7 Divines minimum")));
+const rushGuide = core.strategyGuide("strongboxrush", strongboxRushOpt.results[0].evaluation);
+assert.equal(rushGuide.title, "Strongbox Rush Strategy");
+assert.equal(rushGuide.boardLabels[4].label, "1");
+assert.deepEqual([1, 3, 5, 7].map((index) => rushGuide.boardLabels[index].label), ["2/F", "2/F", "2/F", "2/F"]);
+assert.ok(rushGuide.steps.some((step) => step.includes("Do not use 5 Strongboxes")));
+assert.equal(core.strategyGuide("general"), null);
 const topBorderOptions = core.borderModifierOptions().slice(0, 6).map((option) => option.name);
 assert.ok(topBorderOptions.some((name) => name.includes("Divine Orb")));
 assert.ok(topBorderOptions.some((name) => name.includes("Golden Lanterns")));

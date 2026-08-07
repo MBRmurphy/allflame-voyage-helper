@@ -64,6 +64,7 @@ function loadState() {
         };
       } catch { return chart; }
     });
+    state.charts = core.normalizeInventorySlots(state.charts);
     if (reparsedCount) {
       state.optimizer = null;
       state.status = `Corrected ${reparsedCount} saved Chart shape(s) from Chart Shape lines`;
@@ -85,19 +86,26 @@ function saveState() {
 }
 
 function publicState() {
-  const slotById = new Map(state.charts.map((chart, index) => [chart.id, index + 1]));
+  const slotById = new Map(state.charts.map((chart) => [chart.id, chart.inventorySlot]));
+  const voyageUnderwayChartIds = core.availableVoyageUnderwayChartIds(state.optimizer, state.charts);
+  const bestEvaluation = state.optimizer?.results?.[0]?.evaluation || null;
   return {
     ...state,
     areaModifiers: Array.from({ length: 9 }, (_, index) => state.areaModifiers[index] || []),
     boardBorderModifiers: core.normalizeBoardBorderModifiers(state.boardBorderModifiers),
     borderModifierOptions: core.borderModifierOptions(),
     profiles: Object.fromEntries(Object.entries(core.PROFILES).map(([key, profile]) => [key, profile.label])),
-    charts: state.charts.map((chart, index) => ({
+    charts: state.charts.map((chart) => ({
       ...core.chartSummary(chart, state.profile),
-      inventorySlot: index + 1,
+      inventorySlot: chart.inventorySlot,
       excluded: state.excludedChartIds.includes(chart.id),
     })),
     chartSlots: Object.fromEntries(slotById),
+    inventoryPageSize: core.INVENTORY_PAGE_SIZE,
+    inventoryPageCount: core.INVENTORY_PAGE_COUNT,
+    inventoryMaxSlots: core.INVENTORY_MAX_SLOTS,
+    voyageUnderwayCount: voyageUnderwayChartIds.length,
+    strategyGuide: core.strategyGuide(state.profile, bestEvaluation, state.boardBorderModifiers),
   };
 }
 
@@ -163,10 +171,14 @@ function importText(text, source = "manual") {
     showOverlayMessage(state.status, "info");
     return state.lastImport;
   }
-  if (state.charts.length >= 60) throw new Error("Chart inventory is full (60/60). Clear or remove Charts before importing more.");
+  if (state.charts.length >= core.INVENTORY_MAX_SLOTS) {
+    throw new Error(`Chart inventory is full (${core.INVENTORY_MAX_SLOTS}/${core.INVENTORY_MAX_SLOTS}). Clear or remove Charts before importing more.`);
+  }
   const chart = core.parseChartText(rawText);
+  chart.inventorySlot = core.firstAvailableInventorySlot(state.charts);
   state.charts.push(chart);
   state.lastImport = core.chartSummary(chart, state.profile);
+  state.optimizer = null;
   state.status = `Imported ${state.lastImport.implicitName} (${state.lastImport.patternName}) from ${source}`;
   saveState();
   broadcast();
@@ -181,13 +193,25 @@ function importClipboardSafely(source) {
 
 function optimize() {
   const activeCharts = state.charts
-    .map((chart, index) => ({ ...chart, inventorySlot: index + 1 }))
+    .map((chart) => ({ ...chart }))
     .filter((chart) => !state.excludedChartIds.includes(chart.id));
   state.optimizer = core.optimizeVoyage(activeCharts, state.profile, state.areaModifiers, state.boardBorderModifiers);
   state.status = state.optimizer.error || `Optimized ${activeCharts.length} active Charts (${state.excludedChartIds.length} excluded)`;
   broadcast();
   if (state.optimizer.results?.[0]) showOverlayMessage(`Best Voyage score ${Math.round(state.optimizer.results[0].evaluation.validScore)} (${core.PROFILES[state.profile].label})`, "good");
   return state.optimizer;
+}
+
+function voyageUnderway() {
+  const removal = core.removeVoyageCharts(state.charts, state.excludedChartIds, state.optimizer);
+  state.charts = removal.charts;
+  state.excludedChartIds = removal.excludedChartIds;
+  state.optimizer = null;
+  state.lastImport = null;
+  state.status = `Voyage underway — removed ${removal.removedCount} selected Charts (${state.charts.length} remaining)`;
+  saveState();
+  broadcast();
+  return publicState();
 }
 
 async function checkForUpdates() {
@@ -414,7 +438,7 @@ ipcMain.handle("get-state", () => publicState());
 ipcMain.handle("import-text", (_, text) => importText(text, "text box"));
 ipcMain.handle("import-clipboard", () => importText(clipboard.readText(), "clipboard button"));
 ipcMain.handle("toggle-sequence-import", () => toggleSequenceImport());
-ipcMain.handle("remove-chart", (_, id) => { state.charts = state.charts.filter((chart) => chart.id !== id); state.excludedChartIds = state.excludedChartIds.filter((chartId) => chartId !== id); saveState(); broadcast(); return publicState(); });
+ipcMain.handle("remove-chart", (_, id) => { state.charts = state.charts.filter((chart) => chart.id !== id); state.excludedChartIds = state.excludedChartIds.filter((chartId) => chartId !== id); state.optimizer = null; state.status = "Removed Chart from inventory"; saveState(); broadcast(); return publicState(); });
 ipcMain.handle("toggle-chart-excluded", (_, id) => { const excluded = new Set(state.excludedChartIds); excluded.has(id) ? excluded.delete(id) : excluded.add(id); state.excludedChartIds = Array.from(excluded); state.optimizer = null; saveState(); broadcast(); return publicState(); });
 ipcMain.handle("clear-charts", () => { state.charts = []; state.excludedChartIds = []; state.optimizer = null; saveState(); broadcast(); return publicState(); });
 ipcMain.handle("clear-all", () => clearAll());
@@ -424,6 +448,7 @@ ipcMain.handle("set-board-border-modifier", (_, tileIndex, side, modifierId) => 
 ipcMain.handle("set-selected-area-tile", (_, tileIndex) => { if (Number.isInteger(tileIndex) && tileIndex >= 0 && tileIndex <= 8) state.selectedAreaTile = tileIndex; saveState(); broadcast(); return publicState(); });
 ipcMain.handle("set-profile", (_, profile) => { if (core.PROFILES[profile]) state.profile = profile; saveState(); state.optimizer = null; broadcast(); return publicState(); });
 ipcMain.handle("optimize", () => optimize());
+ipcMain.handle("voyage-underway", () => voyageUnderway());
 ipcMain.handle("toggle-overlay", () => false);
 ipcMain.handle("check-for-updates", () => checkForUpdates());
 ipcMain.handle("download-and-install-update", () => downloadAndInstallUpdate());

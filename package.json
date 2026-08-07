@@ -1,6 +1,6 @@
 {
   "name": "allflame-voyage-helper",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": true,
   "description": "Read-only Path of Exile Allflame Voyage helper overlay and optimizer.",
   "author": "MBRmurphy",
@@ -15,10 +15,8 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "check": "node --check src/main.js && node --check src/preload.js && node --check src/shared/voyage-core.js && node --check src/shared/update-core.js && node --check src/control.js && node --check src/overlay.js && node --check src/web-state.js && node --check src/web-entry.js && node --check tools/build-web.js && node --check tools/serve-web.js && node test.js && node web-test.js && node update-test.js",
-    "dist": "electron-builder --win portable",
-    "web:build": "node tools/build-web.js",
-    "web:preview": "node tools/serve-web.js"
+    "check": "node --check src/main.js && node --check src/preload.js && node --check src/shared/voyage-core.js && node --check src/shared/update-core.js && node --check src/control.js && node --check src/overlay.js && node test.js && node update-test.js",
+    "dist": "electron-builder --win portable"
   },
   "build": {
     "appId": "local.poe.allflame.voyage.helper",
@@ -53,7 +51,6 @@
   },
   "devDependencies": {
     "electron": "^31.7.7",
-    "electron-builder": "^26.15.3",
-    "esbuild": "^0.25.12"
+    "electron-builder": "^26.15.3"
   }
 }

@@ -1,6 +1,5 @@
 node_modules/
 dist/
-web-dist/
 release/
 backups/
 .gh-portable/
